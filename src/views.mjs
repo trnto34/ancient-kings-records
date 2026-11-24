@@ -44,7 +44,7 @@ function footer(c) {
 }
 
 export function layout(c, options, content) {
-  const { title, description = DESCRIPTION, artwork = '/assets/keep.webp', noindex = false, path = c.req.path } = options;
+  const { title, description = DESCRIPTION, artwork = '/assets/ruins.webp', noindex = false, path = c.req.path } = options;
   const pageTitle = title ? `${title} | ${BRAND}` : `${BRAND} | Underground Record Store`;
   const origin = c.get('shop').origin;
   const socialImage = artwork.startsWith('/') && origin ? origin + artwork : artwork;
@@ -56,7 +56,7 @@ export function layout(c, options, content) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${pageTitle}</title>
   <meta name="description" content="${description}">
-  <meta name="theme-color" content="#12110f">
+  <meta name="theme-color" content="#080808">
   ${noindex ? html`<meta name="robots" content="noindex, follow">` : ''}
   ${origin && !noindex ? html`<link rel="canonical" href="${origin + path}"><meta property="og:url" content="${origin + path}">` : ''}
   <meta property="og:type" content="website">
@@ -65,7 +65,8 @@ export function layout(c, options, content) {
   <meta property="og:image" content="${socialImage}">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/assets/mark.webp" type="image/webp">
-  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="preload" href="/assets/barlow-condensed-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/site.css?v=3">
   <script src="/assets/site.js" defer></script>
 </head>
 <body>
@@ -144,7 +145,7 @@ export function home(c, arrivals, featured) {
   const { currency } = c.get('shop');
   return layout(c, {}, html`
     <section class="hero" aria-labelledby="hero-title">
-      <picture class="hero-image"><source media="(max-width: 680px)" srcset="/assets/keep-mobile.webp"><img src="/assets/keep.webp" alt="" width="1680" height="525" fetchpriority="high"></picture>
+      <picture class="hero-image"><source media="(max-width: 680px)" srcset="/assets/ruins-mobile.webp"><img src="/assets/ruins.webp" alt="" width="1680" height="560" fetchpriority="high"></picture>
       <div class="shell hero-content"><span class="eyebrow">Independent record label & distro</span>
         <h1 id="hero-title">Ancient King<br>Records</h1>
         <p>Dungeon synth, black metal and dark ambient.<br class="desktop-only"> Physical releases from the underground.</p>
@@ -171,7 +172,7 @@ export function home(c, arrivals, featured) {
     <section class="shell section-space" aria-labelledby="format-title"><div class="section-head"><h2 id="format-title">Browse by Format</h2></div>
       <div class="format-grid">${FORMATS.map(([slug, name, art]) => html`<a class="format-tile" href="/store/${slug}"><img src="/assets/${art}" alt="" width="512" height="512" loading="lazy"><span>${name}</span></a>`)}</div>
     </section>
-    <section class="philosophy"><div class="shell philosophy-copy"><p class="eyebrow">The label</p><h2>Made to be held.</h2>
+    <section class="philosophy"><div class="shell philosophy-copy"><h2>About the Label</h2>
       <p>Ancient King Records is an independent label and distro dedicated to underground music, independent artists and physical editions. The catalogue brings together music shaped by old places, dark atmospheres and imagined worlds.</p>
       <a class="text-link" href="/about">About the label</a>
     </div></section>`);
