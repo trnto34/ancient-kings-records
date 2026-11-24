@@ -6,7 +6,7 @@ import { all, first, run } from './data.mjs';
 import admin from './admin.mjs';
 import {
   artists, artistBySlug, artistProducts, cartFrom, cartItems, catalogue, catalogueFilters,
-  categories, changeCart, getCategory, getProduct, homeProducts, labelReleases, relatedArtists, saveCart,
+  categories, changeCart, getCategory, getProduct, homeProducts, labelReleases, purchaseProduct, relatedArtists, saveCart,
 } from './shop.mjs';
 import {
   accountPage, artistDirectory, artistPage, cartPage, contactPage, discography, home,
@@ -52,7 +52,7 @@ app.get('/sitemap.xml', async c => {
   if (!origin || c.env.PUBLIC_STORE !== 'true') return c.notFound();
   const [groups, products, performers] = await Promise.all([
     categories(c.env.DB),
-    all(c.env.DB, 'SELECT slug FROM products WHERE active = 1 AND sample = 0'),
+    all(c.env.DB, 'SELECT slug FROM products WHERE active = 1 AND parent_id IS NULL AND sample = 0'),
     all(c.env.DB, 'SELECT slug FROM artists WHERE sample = 0'),
   ]);
   const paths = ['/', '/store', '/about', '/artists', '/discography', '/news', '/shipping', '/contact', '/privacy', '/terms',
@@ -144,11 +144,14 @@ app.get('/cart', async c => {
 
 app.post('/cart/add', async c => {
   const form = await c.req.parseBody();
-  const item = await getProduct(c.env.DB, String(form.slug ?? ''));
+  const listing = await getProduct(c.env.DB, String(form.slug ?? ''));
+  const item = listing && await purchaseProduct(c.env.DB, listing, form.variant);
   const cart = c.get('cart');
-  const error = item ? changeCart(cart, item, Number(form.quantity), true) : 'This item is no longer available.';
+  const error = item ? changeCart(cart, item, Number(form.quantity), true)
+    : listing?.has_variants ? 'Choose an available option for this item.' : 'This item is no longer available.';
   const json = c.req.header('accept')?.includes('application/json');
-  if (error) return json ? c.json({ error }, 409) : message(c, 'Unable to add item', error, 409);
+  if (error) return json ? c.json({ error }, 409) : message(c, 'Unable to add item', error, 409,
+    listing ? `/products/${listing.slug}` : '/store', listing ? 'Back to product' : 'Browse the store');
   saveCart(c, cart);
   if (json) return c.json({ count: [...cart.values()].reduce((sum, count) => sum + count, 0), message: 'Added to your cart.' });
   const next = new URL(redirectPath(form.next), c.req.url);
@@ -162,8 +165,8 @@ app.post('/cart/update', async c => {
   const cart = c.get('cart');
   if (!cart.has(id)) return c.redirect('/cart', 303);
   const remove = form.remove === '1';
-  const item = remove ? { id } : await first(c.env.DB, 'SELECT id, stock, active FROM products WHERE id = ?', [id]);
-  const error = item ? changeCart(cart, item, remove ? 0 : Number(form.quantity)) : 'Remove this unavailable item from your cart.';
+  const [item] = remove ? [{ id }] : await cartItems(c.env.DB, new Map([[id, cart.get(id)]]));
+  const error = item && !item.missing ? changeCart(cart, item, remove ? 0 : Number(form.quantity)) : 'Remove this unavailable item from your cart.';
   if (error) return message(c, 'Unable to update item', error, 409, '/cart', 'Back to cart');
   saveCart(c, cart);
   return c.redirect('/cart', 303);

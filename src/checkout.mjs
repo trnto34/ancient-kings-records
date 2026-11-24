@@ -1,6 +1,6 @@
 import Stripe from 'stripe';
 import { all, first, run, statement } from './data.mjs';
-import { cartTotal } from './shop.mjs';
+import { canPurchase, cartTotal } from './shop.mjs';
 import { now, randomHex } from './security.mjs';
 
 const orderById = (db, id) => first(db, 'SELECT * FROM orders WHERE id = ?', [id]);
@@ -14,7 +14,7 @@ export function stripeClient(env) {
 }
 
 async function reserveOrder(db, id, accountId, items, country, settings) {
-  if (!items.length || items.some(item => item.missing || item.sample || item.bandcamp_url || item.quantity > item.stock)) {
+  if (!items.length || items.some(item => item.missing || item.sample || !canPurchase(item) || item.has_variants || item.quantity > item.stock)) {
     throw new CheckoutError('Review the availability of the items in your cart.');
   }
 
@@ -23,9 +23,12 @@ async function reserveOrder(db, id, accountId, items, country, settings) {
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
   [id, randomHex(), accountId, cartTotal(items), settings.rates[country], settings.currency, country,
     now() + 35 * 60, Number(settings.test)]);
-  const lines = items.map(item => statement(db, `
+  const lines = items.map(item => {
+    const title = item.variant_label ? `${item.title} (${item.variant_label})` : item.title;
+    return statement(db, `
     INSERT INTO order_items (order_id, product_id, title, quantity, unit_cents) VALUES (?, ?, ?, ?, ?)`,
-  [id, item.id, item.artist ? `${item.artist} · ${item.title}` : item.title, item.quantity, item.price_cents]));
+  [id, item.id, item.artist ? `${item.artist} · ${title}` : title, item.quantity, item.price_cents]);
+  });
   try {
     await db.batch([order, ...lines]);
   } catch (error) {

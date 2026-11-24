@@ -148,7 +148,7 @@ test('only verified Stripe events confirm orders or release reserved stock once'
   assert.equal((await first(DB, 'SELECT stock FROM products WHERE id = ?', [product.id])).stock, 2);
 });
 
-test('Bandcamp demo imports listings and editions without taking local payments', async t => {
+test('physical catalogue listings buy on-site and digital previews stay out of the cart', async t => {
   const { DB, request, post } = await setup(t);
   await seedBandcamp(DB);
   await seedBandcamp(DB);
@@ -157,20 +157,71 @@ test('Bandcamp demo imports listings and editions without taking local payments'
     (SELECT count(*) FROM products WHERE active = 1 AND sample = 1) AS old_samples`);
   assert.deepEqual({ ...counts }, { imported: 293, old_samples: 0 });
 
-  const listing = await (await request('/products/bandcamp-item-2573136917')).text();
+  const slug = 'bandcamp-item-2573136917';
+  const listing = await (await request('/products/' + slug)).text();
   assert.match(listing, /Om Selvadeg/);
-  assert.match(listing, /Buy on Bandcamp/);
-  assert.match(listing, /\/album\/om-selvadeg#package-title-2573136917/);
-  assert.doesNotMatch(listing, /action="\/cart\/add"/);
+  assert.match(listing, /action="\/cart\/add"/);
+  assert.match(listing, />Buy<\/button>/);
+  assert.doesNotMatch(listing, /Buy on Bandcamp/);
+  const add = await post('/cart/add', { slug, quantity: 1, next: '/cart' });
+  assert.equal(add.headers.get('location'), '/cart?added=1');
+  const cart = await (await request('/cart', { headers: { cookie: add.headers.getSetCookie()[0].split(';')[0] } })).text();
+  assert.match(cart, /Om Selvadeg/);
+  assert.match(cart, /€9\.90/);
+  assert.match(cart, /Checkout is currently unavailable/);
 
-  const digital = await (await request('/products/bandcamp-album-3825435833')).text();
+  const digitalSlug = 'bandcamp-album-3825435833';
+  const digital = await (await request('/products/' + digitalSlug)).text();
   assert.match(digital, /The Dwarven Cave/);
   assert.match(digital, /album=3825435833/);
-  assert.match(digital, /Support the artist directly/);
-  assert.doesNotMatch(digital, /€999/);
+  assert.doesNotMatch(digital, /action="\/cart\/add"/);
+  assert.equal((await post('/cart/add', { slug: digitalSlug, quantity: 1 })).status, 409);
+  assert.equal((await post('/cart/add', { slug: 'bandcamp-item-2509308194', quantity: 1 })).status, 409);
   assert.equal((await request('/artists/sample-artist-a')).status, 404);
+});
 
-  const directAdd = await post('/cart/add', { slug: 'bandcamp-item-2573136917', quantity: 1 }, null, { accept: 'application/json' });
-  assert.equal(directAdd.status, 409);
-  assert.match((await directAdd.json()).error, /ordered through Bandcamp/);
+test('size selection reserves the correct stock and reaches the Stripe checkout API', async t => {
+  const { DB, env, request, post } = await setup(t, false);
+  await seedBandcamp(DB);
+  Object.assign(env, {
+    ENABLE_CHECKOUT: 'true', SHOP_ORIGIN: origin, SHIPPING_RATES: '{"FR":500}',
+    STRIPE_SECRET_KEY: 'sk_test_integration_fixture', STRIPE_WEBHOOK_SECRET: webhookSecret,
+  });
+  const slug = 'bandcamp-item-1810053436';
+  const size = 'bandcamp-item-1810053436-option-4041771080';
+  const listing = await (await request('/products/' + slug)).text();
+  assert.match(listing, /<select name="variant" required>/);
+  assert.equal((await post('/cart/add', { slug, quantity: 1 })).status, 409);
+  assert.equal((await post('/cart/add', { slug: 'bandcamp-item-3095302623', quantity: 1, variant: size })).status, 409);
+  const add = await post('/cart/add', { slug, variant: size, quantity: 2, next: '/cart' });
+  const cookie = add.headers.getSetCookie()[0].split(';')[0];
+  const cart = await request('/cart?country=FR', { headers: { cookie } });
+  const attemptCookie = cart.headers.getSetCookie().find(value => value.startsWith('akr_checkout=')).split(';')[0];
+  const attempt = attemptCookie.split('=')[1];
+  const markup = await cart.text();
+  assert.match(markup, /T-shirt · M/);
+  assert.match(markup, /€44\.80/);
+  assert.match(markup, /Continue to secure checkout/);
+
+  const stripeCalls = [];
+  t.mock.method(globalThis, 'fetch', async (url, options) => {
+    stripeCalls.push([String(url), new URLSearchParams(options.body)]);
+    return Response.json({ id: 'cs_test_fixture', url: 'https://checkout.stripe.com/c/pay/cs_test_fixture' });
+  });
+  const checkout = await post('/checkout', { attempt, country: 'FR' }, cookie + '; ' + attemptCookie);
+  assert.equal(checkout.status, 303);
+  assert.equal(checkout.headers.get('location'), 'https://checkout.stripe.com/c/pay/cs_test_fixture');
+  const [[url, params]] = stripeCalls;
+  assert.equal(url, 'https://api.stripe.com/v1/checkout/sessions');
+  assert.equal(params.get('line_items[0][price_data][unit_amount]'), '1990');
+  assert.equal(params.get('line_items[0][quantity]'), '2');
+  assert.match(params.get('line_items[0][price_data][product_data][name]'), /Solanum Logo T-Shirt \(M\)/);
+  assert.equal(params.get('shipping_options[0][shipping_rate_data][fixed_amount][amount]'), '500');
+
+  await seedBandcamp(DB);
+  assert.equal((await first(DB, 'SELECT stock FROM products WHERE slug = ?', [size])).stock, 5);
+  const order = await first(DB, 'SELECT status, subtotal_cents, shipping_cents FROM orders WHERE id = ?', [attempt]);
+  assert.deepEqual({ ...order }, { status: 'pending', subtotal_cents: 3980, shipping_cents: 500 });
+  const line = await first(DB, 'SELECT title FROM order_items WHERE order_id = ?', [attempt]);
+  assert.match(line.title, /Solanum Logo T-Shirt \(M\)/);
 });

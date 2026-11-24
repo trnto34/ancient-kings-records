@@ -25,8 +25,9 @@ Set a random `ADMIN_ACCESS_KEY` of at least 24 characters and visit `/admin`. Us
 
 The demo loads `db/bandcamp.json`, a snapshot of the label’s [Bandcamp shop](https://ancientkingrec.bandcamp.com/merch) and [music catalogue](https://ancientkingrec.bandcamp.com/music) captured on 24 November 2026. It contains 232 shop listings including variants, sold-out editions and the tracked-shipping add-on, plus 61 playable music releases. The distribution index is represented by its own category.
 
-Imported prices and availability are snapshots. Product and purchase links lead to the original Bandcamp listings. Album audio streams through the Bandcamp player, and artwork loads from Bandcamp’s image CDN. The demo leaves Bandcamp listings out of local payment and inventory. A fresh database created with `SEED_DEMO=false` starts with the standard categories and an empty catalogue for locally managed products. Use `SEED_DEMO=samples` for the original fictional catalogue fixtures.
+The demo seeds EUR prices and physical inventory from the snapshot once. After that, edit price and stock in `/admin/products`, including stock for each size or color. The **Buy** button adds the selected item to the site cart, and the cart starts Stripe Checkout. Review prices and stock before going live, particularly if the same stock is still listed on Bandcamp. Inventory is managed separately on each channel.
 
+Digital releases have embedded Bandcamp listening previews. The shipping add-on directs shoppers to the store’s shipping information. Artwork loads from Bandcamp’s image CDN. A fresh database created with `SEED_DEMO=false` starts with the standard categories and an empty catalogue. Use `SEED_DEMO=samples` for the original fictional catalogue fixtures.
 
 ## Stripe Checkout
 

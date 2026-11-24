@@ -2027,7 +2027,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "O=={===============> If you want tracked shipping, add this item to your cart before checkout. You get a tracking number in the shipping confirmation vial mail when your order is sent. O=={===============>"
+      "notes": "O=={===============> If you want tracked shipping, add this item to your cart before checkout. You get a tracking number in the shipping confirmation vial mail when your order is sent. O=={===============>",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1956371679",
@@ -2059,7 +2061,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "12\" vinyl, marbled beige edition, limited to 200 copies. Shipping tracked includes."
+      "notes": "12\" vinyl, marbled beige edition, limited to 200 copies. Shipping tracked includes.",
+      "stock": 29,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1810053436",
@@ -2097,7 +2101,45 @@
         "XXXL"
       ],
       "optionName": "Size",
-      "notes": "Screen-printed in white on black t-shirt 100% bio cotton textile."
+      "notes": "Screen-printed in white on black t-shirt 100% bio cotton textile.",
+      "stock": 63,
+      "variants": [
+        {
+          "id": 996135147,
+          "name": "XS",
+          "stock": 10
+        },
+        {
+          "id": 2371361482,
+          "name": "S",
+          "stock": 10
+        },
+        {
+          "id": 4041771080,
+          "name": "M",
+          "stock": 7
+        },
+        {
+          "id": 4160593187,
+          "name": "L",
+          "stock": 8
+        },
+        {
+          "id": 3084730242,
+          "name": "XL",
+          "stock": 8
+        },
+        {
+          "id": 3770349608,
+          "name": "XXL",
+          "stock": 10
+        },
+        {
+          "id": 1223181434,
+          "name": "XXXL",
+          "stock": 10
+        }
+      ]
     },
     {
       "slug": "bandcamp-item-2509308194",
@@ -2126,7 +2168,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "High quality woven patch of Hermith."
+      "notes": "High quality woven patch of Hermith.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2573136917",
@@ -2157,7 +2201,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Clear cassette, limited to 50 copies."
+      "notes": "Clear cassette, limited to 50 copies.",
+      "stock": 25,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-4054236190",
@@ -2188,7 +2234,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Clear cassette, limited to 50 copies."
+      "notes": "Clear cassette, limited to 50 copies.",
+      "stock": 29,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-4291363539",
@@ -2219,7 +2267,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Azul cassette, limited to 100 copies."
+      "notes": "Azul cassette, limited to 100 copies.",
+      "stock": 50,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2540864886",
@@ -2250,7 +2300,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Burnt terracotta cassette, limited to 50 copies."
+      "notes": "Burnt terracotta cassette, limited to 50 copies.",
+      "stock": 7,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-490446089",
@@ -2280,7 +2332,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Purple marble cassette, limited to 50 copies."
+      "notes": "Purple marble cassette, limited to 50 copies.",
+      "stock": 12,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1604886575",
@@ -2310,7 +2364,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Blue cassette, limited to 50 copies."
+      "notes": "Blue cassette, limited to 50 copies.",
+      "stock": 9,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-4129766417",
@@ -2341,7 +2397,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD digipack, limited to 100 copies. Hidden track included."
+      "notes": "CD digipack, limited to 100 copies. Hidden track included.",
+      "stock": 36,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-499779951",
@@ -2371,7 +2429,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Grey marble cassette, limited to 100 copies. Hidden track included."
+      "notes": "Grey marble cassette, limited to 100 copies. Hidden track included.",
+      "stock": 11,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-501980894",
@@ -2401,7 +2461,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Golden cassette, limited to 50 copies."
+      "notes": "Golden cassette, limited to 50 copies.",
+      "stock": 31,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-547620817",
@@ -2431,7 +2493,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Silver cassette and old letter, limited to 50 copies."
+      "notes": "Silver cassette and old letter, limited to 50 copies.",
+      "stock": 14,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3305324329",
@@ -2461,7 +2525,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "White cassette, limited to 50 copies."
+      "notes": "White cassette, limited to 50 copies.",
+      "stock": 17,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-825071530",
@@ -2492,7 +2558,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Black cassette with slipcase, limited to 50 copies."
+      "notes": "Black cassette with slipcase, limited to 50 copies.",
+      "stock": 4,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-312567865",
@@ -2522,7 +2590,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Red cassette, limited to 50 copies. In collaboration with Sokol Keep (UK store): ▶ sokolkeep.bandcamp.com"
+      "notes": "Red cassette, limited to 50 copies. In collaboration with Sokol Keep (UK store): ▶ sokolkeep.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1628585511",
@@ -2551,7 +2621,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Black marble cassette, limited to 100 copies."
+      "notes": "Black marble cassette, limited to 100 copies.",
+      "stock": 6,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3224497051",
@@ -2580,7 +2652,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Clear blue cassette, limited to 50 copies."
+      "notes": "Clear blue cassette, limited to 50 copies.",
+      "stock": 12,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1915968281",
@@ -2609,7 +2683,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Beige marble cassette, limited to 50 copies. Bonus track included."
+      "notes": "Beige marble cassette, limited to 50 copies. Bonus track included.",
+      "stock": 4,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2507468909",
@@ -2638,7 +2714,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Dark yellow cassette, limited to 50 copies."
+      "notes": "Dark yellow cassette, limited to 50 copies.",
+      "stock": 14,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2000605759",
@@ -2667,7 +2745,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Silver cassette, limited to 50 copies."
+      "notes": "Silver cassette, limited to 50 copies.",
+      "stock": 12,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-4135750226",
@@ -2696,7 +2776,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "White cassette, limited to 100 copies."
+      "notes": "White cassette, limited to 100 copies.",
+      "stock": 34,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2733971525",
@@ -2726,7 +2808,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Dark green cassette, limited to 50 copies."
+      "notes": "Dark green cassette, limited to 50 copies.",
+      "stock": 16,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-56123597",
@@ -2756,7 +2840,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Coral marble cassette, limited to 50 copies."
+      "notes": "Coral marble cassette, limited to 50 copies.",
+      "stock": 22,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3164681490",
@@ -2786,7 +2872,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Beige marble cassette, limited to 50 copies."
+      "notes": "Beige marble cassette, limited to 50 copies.",
+      "stock": 24,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3082024516",
@@ -2817,7 +2905,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Dark smoke cassette, limited to 50 copies."
+      "notes": "Dark smoke cassette, limited to 50 copies.",
+      "stock": 8,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2106734912",
@@ -2851,7 +2941,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette \"Wandering Edition\" limited to 50 copies, includes: • Black burlap bag • Black cassette • Wax on the bag • Badge"
+      "notes": "Cassette \"Wandering Edition\" limited to 50 copies, includes: • Black burlap bag • Black cassette • Wax on the bag • Badge",
+      "stock": 6,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-366874249",
@@ -2881,7 +2973,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD digipack, limited to 50 copies. Include a badge from AnaBadges. https://instagram.com/ana.badges"
+      "notes": "CD digipack, limited to 50 copies. Include a badge from AnaBadges. https://instagram.com/ana.badges",
+      "stock": 23,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1609903216",
@@ -2911,7 +3005,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD digipack with booklet, limited to 100 copies."
+      "notes": "CD digipack with booklet, limited to 100 copies.",
+      "stock": 29,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2258475044",
@@ -2941,7 +3037,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD digipack, limited to 50 copies."
+      "notes": "CD digipack, limited to 50 copies.",
+      "stock": 24,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-660113781",
@@ -2971,7 +3069,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD digipack, limited to 50 copies, contains badge."
+      "notes": "CD digipack, limited to 50 copies, contains badge.",
+      "stock": 6,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-288119146",
@@ -3002,7 +3102,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD digipack with booklet, limited to 50 copies, self-produced by the artist. DISTRO"
+      "notes": "CD digipack with booklet, limited to 50 copies, self-produced by the artist. DISTRO",
+      "stock": 3,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1795394578",
@@ -3036,7 +3138,40 @@
         "XXXL"
       ],
       "optionName": "Size",
-      "notes": "Screen-printed in white on black t-shirt 100% bio cotton textile."
+      "notes": "Screen-printed in white on black t-shirt 100% bio cotton textile.",
+      "stock": 12,
+      "variants": [
+        {
+          "id": 432217791,
+          "name": "S",
+          "stock": 0
+        },
+        {
+          "id": 1749107111,
+          "name": "M",
+          "stock": 3
+        },
+        {
+          "id": 2818890422,
+          "name": "L",
+          "stock": 0
+        },
+        {
+          "id": 4135181033,
+          "name": "XL",
+          "stock": 5
+        },
+        {
+          "id": 3217295659,
+          "name": "XXL",
+          "stock": 3
+        },
+        {
+          "id": 1405144008,
+          "name": "XXXL",
+          "stock": 1
+        }
+      ]
     },
     {
       "slug": "bandcamp-item-3095302623",
@@ -3074,7 +3209,35 @@
         "XXL"
       ],
       "optionName": "Size",
-      "notes": "Screen-printed in France, black t-shirt 100% cotton textile. Printed by Useless Pride Merch uselesspride.com Design by Silvana Massa Art linktr.ee/Silvana_Massa_ART Logo by Wappenschmied wappenschmied.com"
+      "notes": "Screen-printed in France, black t-shirt 100% cotton textile. Printed by Useless Pride Merch uselesspride.com Design by Silvana Massa Art linktr.ee/Silvana_Massa_ART Logo by Wappenschmied wappenschmied.com",
+      "stock": 30,
+      "variants": [
+        {
+          "id": 1871108587,
+          "name": "S",
+          "stock": 4
+        },
+        {
+          "id": 645946071,
+          "name": "M",
+          "stock": 7
+        },
+        {
+          "id": 3292621844,
+          "name": "L",
+          "stock": 9
+        },
+        {
+          "id": 3833884908,
+          "name": "XL",
+          "stock": 5
+        },
+        {
+          "id": 855758375,
+          "name": "XXL",
+          "stock": 5
+        }
+      ]
     },
     {
       "slug": "bandcamp-item-2595285864",
@@ -3106,7 +3269,40 @@
       "tracks": [],
       "options": [],
       "optionName": "Size",
-      "notes": "Screen-printed in France, black t-shirt 100% cotton textile. Printed by Useless Pride Merch uselesspride.com Design by John Lordswood linktr.ee/johnlordswood Original photography by Faallaway faallaway.com"
+      "notes": "Screen-printed in France, black t-shirt 100% cotton textile. Printed by Useless Pride Merch uselesspride.com Design by John Lordswood linktr.ee/johnlordswood Original photography by Faallaway faallaway.com",
+      "stock": 0,
+      "variants": [
+        {
+          "id": 1516214923,
+          "name": "S",
+          "stock": 0
+        },
+        {
+          "id": 1276785934,
+          "name": "M",
+          "stock": 0
+        },
+        {
+          "id": 1491101782,
+          "name": "L",
+          "stock": 0
+        },
+        {
+          "id": 2795800183,
+          "name": "XL",
+          "stock": 0
+        },
+        {
+          "id": 1474127698,
+          "name": "XXL",
+          "stock": 0
+        },
+        {
+          "id": 1378091784,
+          "name": "XXXL",
+          "stock": 0
+        }
+      ]
     },
     {
       "slug": "bandcamp-item-3235703446",
@@ -3139,7 +3335,35 @@
         "XXL"
       ],
       "optionName": "Size",
-      "notes": "Screen-printed in France, black t-shirt 100% cotton textile. Two colors, white and gold. Printed by Useless Pride Merch uselesspride.com Design by Joan Llopis Doménech instagram.com/joan_llopis_illustrations"
+      "notes": "Screen-printed in France, black t-shirt 100% cotton textile. Two colors, white and gold. Printed by Useless Pride Merch uselesspride.com Design by Joan Llopis Doménech instagram.com/joan_llopis_illustrations",
+      "stock": 1,
+      "variants": [
+        {
+          "id": 2907406124,
+          "name": "S",
+          "stock": 0
+        },
+        {
+          "id": 3944938563,
+          "name": "M",
+          "stock": 0
+        },
+        {
+          "id": 4234857722,
+          "name": "L",
+          "stock": 0
+        },
+        {
+          "id": 3910217805,
+          "name": "XL",
+          "stock": 0
+        },
+        {
+          "id": 2750808304,
+          "name": "XXL",
+          "stock": 1
+        }
+      ]
     },
     {
       "slug": "bandcamp-item-125455019",
@@ -3167,7 +3391,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "High quality woven patch of Balrog with colors."
+      "notes": "High quality woven patch of Balrog with colors.",
+      "stock": 15,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2735084809",
@@ -3195,7 +3421,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "High quality woven patch."
+      "notes": "High quality woven patch.",
+      "stock": 11,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3655702322",
@@ -3223,7 +3451,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "High quality woven patch of Skhemty with colors."
+      "notes": "High quality woven patch of Skhemty with colors.",
+      "stock": 10,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2844546272",
@@ -3251,7 +3481,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "High quality woven patch."
+      "notes": "High quality woven patch.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-778620995",
@@ -3279,7 +3511,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "High quality embroidered golden patch of Secret Stairways."
+      "notes": "High quality embroidered golden patch of Secret Stairways.",
+      "stock": 10,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-170827620",
@@ -3307,7 +3541,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "High quality printed patch."
+      "notes": "High quality printed patch.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3288749550",
@@ -3335,7 +3571,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Metal pins of the Descort emblem."
+      "notes": "Metal pins of the Descort emblem.",
+      "stock": 34,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-4043160956",
@@ -3363,7 +3601,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "White moon stone of clear quartz, natural crystal, 30mm."
+      "notes": "White moon stone of clear quartz, natural crystal, 30mm.",
+      "stock": 5,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2236276108",
@@ -3393,7 +3633,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "White mug of Ancient King Records \"Guardian of the Forge\" and label logo, printed. With your mug, we offered you our Black and Strong coffee Dark Dungeon Coffee and round brushed mirror effect sticker. ☕ Design by Carlos Castilho instagram.com/crawlstilho"
+      "notes": "White mug of Ancient King Records \"Guardian of the Forge\" and label logo, printed. With your mug, we offered you our Black and Strong coffee Dark Dungeon Coffee and round brushed mirror effect sticker. ☕ Design by Carlos Castilho instagram.com/crawlstilho",
+      "stock": 100,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2567496244",
@@ -3422,7 +3664,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "LP on transparent red with black smoke vinyl, produced by Debemur Morti Productions Music ▶ youtu.be/6KFu4Skr7As Label ▶ debemur-morti.com Import from Europe"
+      "notes": "LP on transparent red with black smoke vinyl, produced by Debemur Morti Productions Music ▶ youtu.be/6KFu4Skr7As Label ▶ debemur-morti.com Import from Europe",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1634940182",
@@ -3451,7 +3695,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "LP limited to 300 copies on orange vinyl, produced by Out Of Season & Forsaken Relics. Music ▶ youtu.be/VCiv9Uo6bkc Label ▶ outofseasonlabel.com Label ▶ forsakenrelics.com Import from USA & Europe"
+      "notes": "LP limited to 300 copies on orange vinyl, produced by Out Of Season & Forsaken Relics. Music ▶ youtu.be/VCiv9Uo6bkc Label ▶ outofseasonlabel.com Label ▶ forsakenrelics.com Import from USA & Europe",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-4140892818",
@@ -3481,7 +3727,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "LP limited to 250 copies on magenta/lilac transparent vinyl, produced by Silver Shield Records. Music ▶ elffor.bandcamp.com Label ▶ outofseasonlabel.com"
+      "notes": "LP limited to 250 copies on magenta/lilac transparent vinyl, produced by Silver Shield Records. Music ▶ elffor.bandcamp.com Label ▶ outofseasonlabel.com",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1494395500",
@@ -3511,7 +3759,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "LP limited to 300 copies on black vinyl, produced by Dunkelheit Produktionen. Music ▶ nortfalke.bandcamp.com Label ▶ dunkelheit-produktionen.de"
+      "notes": "LP limited to 300 copies on black vinyl, produced by Dunkelheit Produktionen. Music ▶ nortfalke.bandcamp.com Label ▶ dunkelheit-produktionen.de",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3316757008",
@@ -3541,7 +3791,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "LP limited to 199 copies on black vinyl, produced by Northern Silence Productions. Music ▶ elffor.bandcamp.com Label ▶ northern-silence.de"
+      "notes": "LP limited to 199 copies on black vinyl, produced by Northern Silence Productions. Music ▶ elffor.bandcamp.com Label ▶ northern-silence.de",
+      "stock": 2,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-275952116",
@@ -3571,7 +3823,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "LP limited to 290 copies on black vinyl, produced by Amor Fati. Music ▶ elffor.bandcamp.com Label ▶ shop.amor-fati-productions.de"
+      "notes": "LP limited to 290 copies on black vinyl, produced by Amor Fati. Music ▶ elffor.bandcamp.com Label ▶ shop.amor-fati-productions.de",
+      "stock": 2,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-126272347",
@@ -3601,7 +3855,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "LP limited to 290 copies on black vinyl, produced by Amor Fati. Music ▶ elffor.bandcamp.com Label ▶ shop.amor-fati-productions.de"
+      "notes": "LP limited to 290 copies on black vinyl, produced by Amor Fati. Music ▶ elffor.bandcamp.com Label ▶ shop.amor-fati-productions.de",
+      "stock": 2,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3374728788",
@@ -3630,7 +3886,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette, produced by Skaventhrone. Music ▶ akerj.bandcamp.com Label ▶ skaventhrone.bandcamp.com"
+      "notes": "Cassette, produced by Skaventhrone. Music ▶ akerj.bandcamp.com Label ▶ skaventhrone.bandcamp.com",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2049012847",
@@ -3660,7 +3918,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 50 copies, produced by Mirabilia Records. \"Synth Wizards Astrology\" compilation: Ber Bein, Black Winds of Wallachia, Bosenn Werblus, Hyperwulff, Inexistence, Totenstille, Umbrae Magister, Weress Music ▶ youtu.be/KSAvsfbDdY8 Label ▶ mirabiliarecords.bandcamp.com"
+      "notes": "Cassette limited to 50 copies, produced by Mirabilia Records. \"Synth Wizards Astrology\" compilation: Ber Bein, Black Winds of Wallachia, Bosenn Werblus, Hyperwulff, Inexistence, Totenstille, Umbrae Magister, Weress Music ▶ youtu.be/KSAvsfbDdY8 Label ▶ mirabiliarecords.bandcamp.com",
+      "stock": 2,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2513872660",
@@ -3689,7 +3949,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette, produced by Phantom Lure. Music ▶ victorianspecter.bandcamp.com Music ▶ sopoorific.bandcamp.com Label ▶ phantomlure.com"
+      "notes": "Cassette, produced by Phantom Lure. Music ▶ victorianspecter.bandcamp.com Music ▶ sopoorific.bandcamp.com Label ▶ phantomlure.com",
+      "stock": 4,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3081875002",
@@ -3718,7 +3980,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette, produced by Phantom Lure. Music ▶ forlorncitadel.bandcamp.com Label ▶ phantomlure.com"
+      "notes": "Cassette, produced by Phantom Lure. Music ▶ forlorncitadel.bandcamp.com Label ▶ phantomlure.com",
+      "stock": 3,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-938297421",
@@ -3747,7 +4011,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 25 copies, produced by Fiadh Productions. Music ▶ svampprinsen.bandcamp.com Label ▶ fiadh.bandcamp.com"
+      "notes": "Cassette limited to 25 copies, produced by Fiadh Productions. Music ▶ svampprinsen.bandcamp.com Label ▶ fiadh.bandcamp.com",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-457869181",
@@ -3776,7 +4042,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 100 copies, produced by Forsaken Relics and Realm & Ritual. Music ▶ realmandritual.bandcamp.com Label ▶ forsakenrelics.com"
+      "notes": "Cassette limited to 100 copies, produced by Forsaken Relics and Realm & Ritual. Music ▶ realmandritual.bandcamp.com Label ▶ forsakenrelics.com",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3787734918",
@@ -3805,7 +4073,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 100 copies, self-produced by The Wanderer. Music ▶ songsofthewanderer.bandcamp.com"
+      "notes": "Cassette limited to 100 copies, self-produced by The Wanderer. Music ▶ songsofthewanderer.bandcamp.com",
+      "stock": 2,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-22112581",
@@ -3834,7 +4104,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 50 copies, produced by Blaggard Records. Music ▶ assortedpotions.bandcamp.com Label ▶ blaggardrecords.bandcamp.com"
+      "notes": "Cassette limited to 50 copies, produced by Blaggard Records. Music ▶ assortedpotions.bandcamp.com Label ▶ blaggardrecords.bandcamp.com",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1540740086",
@@ -3863,7 +4135,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 50 copies, produced by Blaggard Records. Music ▶ mountainfog.bandcamp.com Label ▶ blaggardrecords.bandcamp.com"
+      "notes": "Cassette limited to 50 copies, produced by Blaggard Records. Music ▶ mountainfog.bandcamp.com Label ▶ blaggardrecords.bandcamp.com",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1037272935",
@@ -3892,7 +4166,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette produced by Divinity Records. Music ▶ dawnofdivision.bandcamp.com"
+      "notes": "Cassette produced by Divinity Records. Music ▶ dawnofdivision.bandcamp.com",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3594683635",
@@ -3921,7 +4197,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CDr Slim Case limited to 35 hand-numbered copies, produced by Black Death Industry. Music ▶ budrum.bandcamp.com Label ▶ blackdeathindustry.bandcamp.com"
+      "notes": "CDr Slim Case limited to 35 hand-numbered copies, produced by Black Death Industry. Music ▶ budrum.bandcamp.com Label ▶ blackdeathindustry.bandcamp.com",
+      "stock": 10,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1326534766",
@@ -3950,7 +4228,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Jewel Case, produced by Nocturnal Curse Records. Label ▶ nocturnalcurserecords.bandcamp.com"
+      "notes": "CD Jewel Case, produced by Nocturnal Curse Records. Label ▶ nocturnalcurserecords.bandcamp.com",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1793879271",
@@ -3979,7 +4259,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Jewel Case limited to 100 copies, produced by Dead Master's Beat."
+      "notes": "CD Jewel Case limited to 100 copies, produced by Dead Master's Beat.",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2453127466",
@@ -4008,7 +4290,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CDr Slim Case limited to 15 hand-numbered copies, self-released by Baddoar. Music ▶ cauldron80.bandcamp.com"
+      "notes": "CDr Slim Case limited to 15 hand-numbered copies, self-released by Baddoar. Music ▶ cauldron80.bandcamp.com",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2956656788",
@@ -4037,7 +4321,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Jewel Case limited to 50 copies, produced by Obscure Dungeon Records. Music ▶ gentlefm.bandcamp.com"
+      "notes": "CD Jewel Case limited to 50 copies, produced by Obscure Dungeon Records. Music ▶ gentlefm.bandcamp.com",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2494335631",
@@ -4066,7 +4352,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Jewel Case, produced by Nocturnal Curse Records. Label ▶ nocturnalcurserecords.bandcamp.com"
+      "notes": "CD Jewel Case, produced by Nocturnal Curse Records. Label ▶ nocturnalcurserecords.bandcamp.com",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-949206430",
@@ -4095,7 +4383,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Jewel Case, produced by Negra Nit. Music ▶ youtu.be/uGEMe4FzfDI"
+      "notes": "CD Jewel Case, produced by Negra Nit. Music ▶ youtu.be/uGEMe4FzfDI",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-362883366",
@@ -4124,7 +4414,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Digipack, self-produced by Hermith. Music ▶ hermith.bandcamp.com"
+      "notes": "CD Digipack, self-produced by Hermith. Music ▶ hermith.bandcamp.com",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-472325216",
@@ -4153,7 +4445,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Digipack, produced by Dark Vinyl Records. Music ▶ derblauereiterband.bandcamp.com Label ▶ darkvinylrecords.bandcamp.com Recorded by Sathorys Elenorth (Crysalidis, Lugburz, Narsilion, etc.)"
+      "notes": "CD Digipack, produced by Dark Vinyl Records. Music ▶ derblauereiterband.bandcamp.com Label ▶ darkvinylrecords.bandcamp.com Recorded by Sathorys Elenorth (Crysalidis, Lugburz, Narsilion, etc.)",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3513833088",
@@ -4182,7 +4476,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Digipack limited to 500 copies, produced by Aesthetic Death and NGC Prod. Music ▶ nebelkorona.com Label ▶ aestheticdeath.bandcamp.com Label ▶ https://ngcprod.bandcamp.com"
+      "notes": "CD Digipack limited to 500 copies, produced by Aesthetic Death and NGC Prod. Music ▶ nebelkorona.com Label ▶ aestheticdeath.bandcamp.com Label ▶ https://ngcprod.bandcamp.com",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1219227170",
@@ -4211,7 +4507,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Digipack limited to 200 copies, produced by Obscure Dungeon Records. Music ▶ youtu.be/UZAAVMIEM8M"
+      "notes": "CD Digipack limited to 200 copies, produced by Obscure Dungeon Records. Music ▶ youtu.be/UZAAVMIEM8M",
+      "stock": 9,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3184956681",
@@ -4240,7 +4538,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Digipack limited to 500 copies, produced by Nightside Records. Music ▶ elffor.bandcamp.com Label ▶ nightside.at"
+      "notes": "CD Digipack limited to 500 copies, produced by Nightside Records. Music ▶ elffor.bandcamp.com Label ▶ nightside.at",
+      "stock": 4,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-565457142",
@@ -4269,7 +4569,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Digipack, auto-produced by Natremia. Music ▶ natremia.bandcamp.com"
+      "notes": "CD Digipack, auto-produced by Natremia. Music ▶ natremia.bandcamp.com",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-4207044284",
@@ -4298,7 +4600,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Digipack limited to 50 copies, produced by Condate Legacy Records. Music ▶ eminentiatenebris.bandcamp.com Label ▶ condatelegacy.bandcamp.com"
+      "notes": "CD Digipack limited to 50 copies, produced by Condate Legacy Records. Music ▶ eminentiatenebris.bandcamp.com Label ▶ condatelegacy.bandcamp.com",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1209975818",
@@ -4327,7 +4631,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Digipack limited to 50 copies, produced by Condate Legacy Records. Music ▶ disciplinebm.bandcamp.com Label ▶ condatelegacy.bandcamp.com"
+      "notes": "CD Digipack limited to 50 copies, produced by Condate Legacy Records. Music ▶ disciplinebm.bandcamp.com Label ▶ condatelegacy.bandcamp.com",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1565516082",
@@ -4356,7 +4662,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Digipack limited to 50 copies, produced by Condate Legacy Records. Music ▶ 1357.bandcamp.com Label ▶ condatelegacy.bandcamp.com"
+      "notes": "CD Digipack limited to 50 copies, produced by Condate Legacy Records. Music ▶ 1357.bandcamp.com Label ▶ condatelegacy.bandcamp.com",
+      "stock": 4,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3777861418",
@@ -4385,7 +4693,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Digipack limited to 50 copies, produced by Condate Legacy Records. Music ▶ youtu.be/LlUxdGX-U24 Label ▶ condatelegacy.bandcamp.com"
+      "notes": "CD Digipack limited to 50 copies, produced by Condate Legacy Records. Music ▶ youtu.be/LlUxdGX-U24 Label ▶ condatelegacy.bandcamp.com",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1906621479",
@@ -4413,7 +4723,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Fanzine and newsletter printed by Black Death Industry. A5 stapled brochure printed, 28 pages Volume Made in March 2026"
+      "notes": "Fanzine and newsletter printed by Black Death Industry. A5 stapled brochure printed, 28 pages Volume Made in March 2026",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1823123997",
@@ -4441,7 +4753,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Fanzine and newsletter printed by Black Death Industry. A5 stapled brochure printed, 32 pages Volume Made in July 2026"
+      "notes": "Fanzine and newsletter printed by Black Death Industry. A5 stapled brochure printed, 32 pages Volume Made in July 2026",
+      "stock": 1,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2040700794",
@@ -4470,7 +4784,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "VHS video tape limited to 30 copies, produced by SF Productions. Music ▶ youtu.be/DNCKuqdx0q0 Label ▶ sfproductions.bandcamp.com Import from Poland"
+      "notes": "VHS video tape limited to 30 copies, produced by SF Productions. Music ▶ youtu.be/DNCKuqdx0q0 Label ▶ sfproductions.bandcamp.com Import from Poland",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3840356878",
@@ -4500,7 +4816,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "LP limited to 110 copies on blue/green swirl vinyl, produced by Northern Silence Productions. Music ▶ solanumds.bandcamp.com Label ▶ northern-silence.de"
+      "notes": "LP limited to 110 copies on blue/green swirl vinyl, produced by Northern Silence Productions. Music ▶ solanumds.bandcamp.com Label ▶ northern-silence.de",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1560197164",
@@ -4530,7 +4848,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "LP limited to 200 copies on black vinyl, produced by Gondolin Records. Music ▶ arcanaliturgia.bandcamp.com Label ▶ gondolinrecords.bandcamp.com"
+      "notes": "LP limited to 200 copies on black vinyl, produced by Gondolin Records. Music ▶ arcanaliturgia.bandcamp.com Label ▶ gondolinrecords.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2122873531",
@@ -4560,7 +4880,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "LP limited to 200 copies on green vinyl, produced by Out Of Season and Forsaken Relics. Music ▶ murgrind-music.bandcamp.com Label ▶ outofseasonlabel.com Label ▶ forsakenrelics.com"
+      "notes": "LP limited to 200 copies on green vinyl, produced by Out Of Season and Forsaken Relics. Music ▶ murgrind-music.bandcamp.com Label ▶ outofseasonlabel.com Label ▶ forsakenrelics.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3167350680",
@@ -4590,7 +4912,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "LP limited to 100 copies on gold vinyl, produced by Out Of Season. Music ▶ stormkeep-odl.bandcamp.com Label ▶ outofseasonlabel.com"
+      "notes": "LP limited to 100 copies on gold vinyl, produced by Out Of Season. Music ▶ stormkeep-odl.bandcamp.com Label ▶ outofseasonlabel.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2357239408",
@@ -4620,7 +4944,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "LP limited to 300 copies on red vinyl, produced by Dungeons Deep Records and Phantom Lure. Music ▶ grandmascottage.bandcamp.com Label ▶ dungeonsdeep.com Label ▶ phantomlure.com"
+      "notes": "LP limited to 300 copies on red vinyl, produced by Dungeons Deep Records and Phantom Lure. Music ▶ grandmascottage.bandcamp.com Label ▶ dungeonsdeep.com Label ▶ phantomlure.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1902977826",
@@ -4653,7 +4979,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Digipack special edition, limited to 15 copies. Produced by Onodrim Production in 2018. The special complete edition includes: - CD Digipack - Printed linen enveloppe - Poster - Logo patch - One ring of Sauron - Rune handmade (NOT INCLUDED) Music ▶ balrogdungeon.bandcamp.com"
+      "notes": "CD Digipack special edition, limited to 15 copies. Produced by Onodrim Production in 2018. The special complete edition includes: - CD Digipack - Printed linen enveloppe - Poster - Logo patch - One ring of Sauron - Rune handmade (NOT INCLUDED) Music ▶ balrogdungeon.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3619785677",
@@ -4683,7 +5011,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette, produced by Holodeck. Music ▶ survive.bandcamp.com Label ▶ holodeckrecords.com"
+      "notes": "Cassette, produced by Holodeck. Music ▶ survive.bandcamp.com Label ▶ holodeckrecords.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1955418745",
@@ -4713,7 +5043,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 20 copies, self-released by Fåntratt. Music ▶ faontratt.bandcamp.com"
+      "notes": "Cassette limited to 20 copies, self-released by Fåntratt. Music ▶ faontratt.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3975763793",
@@ -4743,7 +5075,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 20 copies, self-released by Fåntratt. Music ▶ faontratt.bandcamp.com"
+      "notes": "Cassette limited to 20 copies, self-released by Fåntratt. Music ▶ faontratt.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3323598351",
@@ -4773,7 +5107,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 100 copies, self-released by Fåntratt. Music ▶ faontratt.bandcamp.com"
+      "notes": "Cassette limited to 100 copies, self-released by Fåntratt. Music ▶ faontratt.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-754577430",
@@ -4803,7 +5139,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 55 copies, self-released by Fåntratt. Music ▶ faontratt.bandcamp.com"
+      "notes": "Cassette limited to 55 copies, self-released by Fåntratt. Music ▶ faontratt.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-469683464",
@@ -4832,7 +5170,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 65 copies, produced by Mushroom Keep Records. Music ▶ douvesetdoloires.bandcamp.com Label ▶ mushroomkeeprecords.bandcamp.com"
+      "notes": "Cassette limited to 65 copies, produced by Mushroom Keep Records. Music ▶ douvesetdoloires.bandcamp.com Label ▶ mushroomkeeprecords.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2904304845",
@@ -4861,7 +5201,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 30 copies, produced by Kajdum's Tower. Music ▶ elffor.bandcamp.com Label ▶ kajdumstower.bandcamp.com"
+      "notes": "Cassette limited to 30 copies, produced by Kajdum's Tower. Music ▶ elffor.bandcamp.com Label ▶ kajdumstower.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3560271398",
@@ -4890,7 +5232,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette, produced by Counter Records. Music ▶ themidnight.bandcamp.com Label ▶ ninjatune.net"
+      "notes": "Cassette, produced by Counter Records. Music ▶ themidnight.bandcamp.com Label ▶ ninjatune.net",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-255743593",
@@ -4919,7 +5263,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 130 copies, produced by Gondolin Records. Music ▶ anoldsadghost.bandcamp.com Label ▶ gondolinrecords.bandcamp.com"
+      "notes": "Cassette limited to 130 copies, produced by Gondolin Records. Music ▶ anoldsadghost.bandcamp.com Label ▶ gondolinrecords.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2312940092",
@@ -4948,7 +5294,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 130 copies, produced by Gondolin Records. Music ▶ anoldsadghost.bandcamp.com Label ▶ gondolinrecords.bandcamp.com"
+      "notes": "Cassette limited to 130 copies, produced by Gondolin Records. Music ▶ anoldsadghost.bandcamp.com Label ▶ gondolinrecords.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-421558280",
@@ -4977,7 +5325,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 200 copies, produced by Gondolin Records. Music ▶ anoldsadghost.bandcamp.com Label ▶ gondolinrecords.bandcamp.com"
+      "notes": "Cassette limited to 200 copies, produced by Gondolin Records. Music ▶ anoldsadghost.bandcamp.com Label ▶ gondolinrecords.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2650797558",
@@ -5006,7 +5356,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 150 copies, produced by Gondolin Records. Music ▶ anoldsadghost.bandcamp.com Label ▶ gondolinrecords.bandcamp.com"
+      "notes": "Cassette limited to 150 copies, produced by Gondolin Records. Music ▶ anoldsadghost.bandcamp.com Label ▶ gondolinrecords.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3257613700",
@@ -5035,7 +5387,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette, produced by Ætergap Productions. Music ▶ brugmanziah.bandcamp.com Label ▶ aetergap.com"
+      "notes": "Cassette, produced by Ætergap Productions. Music ▶ brugmanziah.bandcamp.com Label ▶ aetergap.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2269299508",
@@ -5064,7 +5418,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette, produced by Ætergap Productions. Music ▶ brugmanziah.bandcamp.com Label ▶ aetergap.com"
+      "notes": "Cassette, produced by Ætergap Productions. Music ▶ brugmanziah.bandcamp.com Label ▶ aetergap.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2417269796",
@@ -5093,7 +5449,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette, produced by Mystery Circles. Music ▶ stegonaute.bandcamp.com Label ▶ Mystery Circles"
+      "notes": "Cassette, produced by Mystery Circles. Music ▶ stegonaute.bandcamp.com Label ▶ Mystery Circles",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1550180682",
@@ -5122,7 +5480,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 50 copies, produced by Blaggard Records. Music ▶ youtu.be/IQzgBlRsao0 Label ▶ blaggardrecords.bandcamp.com"
+      "notes": "Cassette limited to 50 copies, produced by Blaggard Records. Music ▶ youtu.be/IQzgBlRsao0 Label ▶ blaggardrecords.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2023200959",
@@ -5151,7 +5511,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 18 copies, produced by Kajdum's Tower. Music ▶ dragontomes.bandcamp.com Label ▶ kajdumstower.bandcamp.com"
+      "notes": "Cassette limited to 18 copies, produced by Kajdum's Tower. Music ▶ dragontomes.bandcamp.com Label ▶ kajdumstower.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2219224717",
@@ -5181,7 +5543,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette, produced by De Rana Mysteriis Productions. Music ▶ oddwarlock.bandcamp.com Label ▶ deranamysteriis.de"
+      "notes": "Cassette, produced by De Rana Mysteriis Productions. Music ▶ oddwarlock.bandcamp.com Label ▶ deranamysteriis.de",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2297366914",
@@ -5210,7 +5574,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 20 copies, produced by Kajdum's Tower. Music ▶ osmord.bandcamp.com Label ▶ kajdumstower.bandcamp.com"
+      "notes": "Cassette limited to 20 copies, produced by Kajdum's Tower. Music ▶ osmord.bandcamp.com Label ▶ kajdumstower.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-4169590000",
@@ -5240,7 +5606,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette, produced by Phantom Lure. Music ▶ warlockcorpse.bandcamp.com Label ▶ phantomlure.com"
+      "notes": "Cassette, produced by Phantom Lure. Music ▶ warlockcorpse.bandcamp.com Label ▶ phantomlure.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-613455370",
@@ -5269,7 +5637,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 100 copies, produced by Haftvad Records. Music ▶ werwolfsblut.bandcamp.com Music ▶ cryptofcarmilla.bandcamp.com Label ▶ haftvadrecords.storenvy.com"
+      "notes": "Cassette limited to 100 copies, produced by Haftvad Records. Music ▶ werwolfsblut.bandcamp.com Music ▶ cryptofcarmilla.bandcamp.com Label ▶ haftvadrecords.storenvy.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2703801880",
@@ -5298,7 +5668,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 100 copies, produced by Dark Age Productions. Music ▶ derdusteretag.bandcamp.com Label ▶ darkageproductions.bandcamp.com"
+      "notes": "Cassette limited to 100 copies, produced by Dark Age Productions. Music ▶ derdusteretag.bandcamp.com Label ▶ darkageproductions.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3690112817",
@@ -5328,7 +5700,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette, produced by De Rana Mysteriis Productions. Music ▶ wingrath.bandcamp.com Label ▶ deranamysteriis.de"
+      "notes": "Cassette, produced by De Rana Mysteriis Productions. Music ▶ wingrath.bandcamp.com Label ▶ deranamysteriis.de",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1686690117",
@@ -5358,7 +5732,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette, produced by Moos und Efeu Produktionen. Music ▶ dod-records.bandcamp.com Label ▶ dod-records.de"
+      "notes": "Cassette, produced by Moos und Efeu Produktionen. Music ▶ dod-records.bandcamp.com Label ▶ dod-records.de",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-435229762",
@@ -5388,7 +5764,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 50 copies, produced by Mushroom Keep Records. Music ▶ mythenmetz.bandcamp.com Label ▶ mushroomkeeprecords.bandcamp.com"
+      "notes": "Cassette limited to 50 copies, produced by Mushroom Keep Records. Music ▶ mythenmetz.bandcamp.com Label ▶ mushroomkeeprecords.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-804310393",
@@ -5417,7 +5795,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 50 copies, produced by Forsaken Relics and Nekrart Productions. Music ▶ vetussupulcrum.bandcamp.com Label ▶ forsakenrelics.com Label ▶ nightside.at"
+      "notes": "Cassette limited to 50 copies, produced by Forsaken Relics and Nekrart Productions. Music ▶ vetussupulcrum.bandcamp.com Label ▶ forsakenrelics.com Label ▶ nightside.at",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-436086432",
@@ -5446,7 +5826,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 100 copies, produced by Forsaken Relics. Music ▶ navgolokh.bandcamp.com Label ▶ forsakenrelics.com"
+      "notes": "Cassette limited to 100 copies, produced by Forsaken Relics. Music ▶ navgolokh.bandcamp.com Label ▶ forsakenrelics.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3030321035",
@@ -5475,7 +5857,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 38 copies, produced by Kajdum's Tower. Music ▶ youtu.be/uQkzMEFkb60 Label ▶ kajdumstower.bandcamp.com"
+      "notes": "Cassette limited to 38 copies, produced by Kajdum's Tower. Music ▶ youtu.be/uQkzMEFkb60 Label ▶ kajdumstower.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2445926267",
@@ -5504,7 +5888,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 150 copies, produced by Kajdum's Tower. Music ▶ oldsorcery.bandcamp.com Label ▶ kajdumstower.bandcamp.com"
+      "notes": "Cassette limited to 150 copies, produced by Kajdum's Tower. Music ▶ oldsorcery.bandcamp.com Label ▶ kajdumstower.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2957389596",
@@ -5533,7 +5919,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 150 copies, produced by Kajdum's Tower. Music ▶ oldsorcery.bandcamp.com Label ▶ kajdumstower.bandcamp.com"
+      "notes": "Cassette limited to 150 copies, produced by Kajdum's Tower. Music ▶ oldsorcery.bandcamp.com Label ▶ kajdumstower.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2495285442",
@@ -5562,7 +5950,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 150 copies, produced by Kajdum's Tower. Music ▶ oldsorcery.bandcamp.com Label ▶ kajdumstower.bandcamp.com"
+      "notes": "Cassette limited to 150 copies, produced by Kajdum's Tower. Music ▶ oldsorcery.bandcamp.com Label ▶ kajdumstower.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3981166825",
@@ -5591,7 +5981,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 20 copies, produced by Kajdum's Tower. Music ▶ paladin1.bandcamp.com Label ▶ kajdumstower.bandcamp.com"
+      "notes": "Cassette limited to 20 copies, produced by Kajdum's Tower. Music ▶ paladin1.bandcamp.com Label ▶ kajdumstower.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-538858940",
@@ -5620,7 +6012,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 20 copies, produced by Kajdum's Tower. Music ▶ paladin1.bandcamp.com Label ▶ kajdumstower.bandcamp.com"
+      "notes": "Cassette limited to 20 copies, produced by Kajdum's Tower. Music ▶ paladin1.bandcamp.com Label ▶ kajdumstower.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3791090446",
@@ -5649,7 +6043,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 35 copies, produced by Kajdum's Tower. Music ▶ https://mortiis.bandcamp.com/album/fata-morgana Label ▶ kajdumstower.bandcamp.com"
+      "notes": "Cassette limited to 35 copies, produced by Kajdum's Tower. Music ▶ https://mortiis.bandcamp.com/album/fata-morgana Label ▶ kajdumstower.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3295839627",
@@ -5678,7 +6074,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 30 copies, produced by Kajdum's Tower. Music ▶ murgrind-music.bandcamp.com Label ▶ kajdumstower.bandcamp.com"
+      "notes": "Cassette limited to 30 copies, produced by Kajdum's Tower. Music ▶ murgrind-music.bandcamp.com Label ▶ kajdumstower.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2796825911",
@@ -5707,7 +6105,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 25 copies, produced by Kajdum's Tower. Music ▶ castlezagyx.bandcamp.com Label ▶ kajdumstower.bandcamp.com"
+      "notes": "Cassette limited to 25 copies, produced by Kajdum's Tower. Music ▶ castlezagyx.bandcamp.com Label ▶ kajdumstower.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-998611064",
@@ -5736,7 +6136,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 30 copies, produced by Kajdum's Tower. Music ▶ torchlightds.bandcamp.com Label ▶ kajdumstower.bandcamp.com"
+      "notes": "Cassette limited to 30 copies, produced by Kajdum's Tower. Music ▶ torchlightds.bandcamp.com Label ▶ kajdumstower.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-471669152",
@@ -5765,7 +6167,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 20 copies, produced by Kajdum's Tower. Music ▶ owlens.bandcamp.com Label ▶ kajdumstower.bandcamp.com"
+      "notes": "Cassette limited to 20 copies, produced by Kajdum's Tower. Music ▶ owlens.bandcamp.com Label ▶ kajdumstower.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3552854082",
@@ -5794,7 +6198,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette, produced by Starless Music. Music ▶youtu.be/mL6g1g0DqtM Label ▶ lilastarless.bandcamp.com"
+      "notes": "Cassette, produced by Starless Music. Music ▶youtu.be/mL6g1g0DqtM Label ▶ lilastarless.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-194549103",
@@ -5823,7 +6229,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Jewel Case limited to 50 copies, produced by Condate Legacy Records. Music ▶ arsule.bandcamp.com Label ▶ condatelegacy.bandcamp.com"
+      "notes": "CD Jewel Case limited to 50 copies, produced by Condate Legacy Records. Music ▶ arsule.bandcamp.com Label ▶ condatelegacy.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1161970292",
@@ -5853,7 +6261,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Jewel Case, produced by Nuclear Blast. Music ▶ youtu.be/E3zuZlqkQNI Label ▶ nuclearblast.com"
+      "notes": "CD Jewel Case, produced by Nuclear Blast. Music ▶ youtu.be/E3zuZlqkQNI Label ▶ nuclearblast.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-943670643",
@@ -5882,7 +6292,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Jewel Case limited to 500 copies, produced by Le Crépuscule Du Soir. Music ▶ moloch.com.ua"
+      "notes": "CD Jewel Case limited to 500 copies, produced by Le Crépuscule Du Soir. Music ▶ moloch.com.ua",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3822973518",
@@ -5911,7 +6323,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Jewel Case limited to 200 copies, produced by Heidens Hart. Music ▶ nortfalke.bandcamp.com"
+      "notes": "CD Jewel Case limited to 200 copies, produced by Heidens Hart. Music ▶ nortfalke.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-307088391",
@@ -5940,7 +6354,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Digipack limited to 500 copies, produced by Deivlforst Records. Music ▶ wolcensmen.bandcamp.com Label ▶ deivlforst.bandcamp.com"
+      "notes": "CD Digipack limited to 500 copies, produced by Deivlforst Records. Music ▶ wolcensmen.bandcamp.com Label ▶ deivlforst.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1087588447",
@@ -5969,7 +6385,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "2xCD Digipack, produced by Profound Lore Records. Music ▶ bellwitch.bandcamp.com Label ▶ profoundlorerecords.com"
+      "notes": "2xCD Digipack, produced by Profound Lore Records. Music ▶ bellwitch.bandcamp.com Label ▶ profoundlorerecords.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3578289632",
@@ -5998,7 +6416,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Digipack limited to 50 copies, produced by High Cathedral Records. Music ▶ urrnil.bandcamp.com Label ▶ high-cathedral.bandcamp.com"
+      "notes": "CD Digipack limited to 50 copies, produced by High Cathedral Records. Music ▶ urrnil.bandcamp.com Label ▶ high-cathedral.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1919987479",
@@ -6027,7 +6447,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Digipack limited to 200 copies, produced by Obscure Dungeon Records. Music ▶ auranegativ.bandcamp.com"
+      "notes": "CD Digipack limited to 200 copies, produced by Obscure Dungeon Records. Music ▶ auranegativ.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1817139815",
@@ -6056,7 +6478,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Digipack limited to 500 copies, produced by Nightside Records. Music ▶ elffor.bandcamp.com Label ▶ nightside.at"
+      "notes": "CD Digipack limited to 500 copies, produced by Nightside Records. Music ▶ elffor.bandcamp.com Label ▶ nightside.at",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-439106578",
@@ -6085,7 +6509,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Digipack limited to 500 copies, produced by Nightside Records. Music ▶ elffor.bandcamp.com Label ▶ nightside.at"
+      "notes": "CD Digipack limited to 500 copies, produced by Nightside Records. Music ▶ elffor.bandcamp.com Label ▶ nightside.at",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-597759328",
@@ -6114,7 +6540,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Digipack limited to 500 copies, produced by Nekrart Productions. Music ▶ elffor.bandcamp.com Label ▶ nightside.at"
+      "notes": "CD Digipack limited to 500 copies, produced by Nekrart Productions. Music ▶ elffor.bandcamp.com Label ▶ nightside.at",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3063256095",
@@ -6143,7 +6571,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Digipack limited to 500 copies, produced by Nekrart Productions. Music ▶ elffor.bandcamp.com Label ▶ nightside.at"
+      "notes": "CD Digipack limited to 500 copies, produced by Nekrart Productions. Music ▶ elffor.bandcamp.com Label ▶ nightside.at",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2776118549",
@@ -6172,7 +6602,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Digipack limited to 500 copies, produced by Nightside Records. Music ▶ elffor.bandcamp.com Label ▶ nightside.at"
+      "notes": "CD Digipack limited to 500 copies, produced by Nightside Records. Music ▶ elffor.bandcamp.com Label ▶ nightside.at",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2020073138",
@@ -6201,7 +6633,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Digipack limited to 500 copies, produced by Nightside Records. Music ▶ elffor.bandcamp.com Label ▶ nightside.at"
+      "notes": "CD Digipack limited to 500 copies, produced by Nightside Records. Music ▶ elffor.bandcamp.com Label ▶ nightside.at",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3882522749",
@@ -6230,7 +6664,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Digipack limited to 100 copies, produced by Ksenza Records. Music ▶ elffor.bandcamp.com Label ▶ ksenza.bandcamp.com"
+      "notes": "CD Digipack limited to 100 copies, produced by Ksenza Records. Music ▶ elffor.bandcamp.com Label ▶ ksenza.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3975805276",
@@ -6259,7 +6695,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Digipack limited to 50 copies, produced by Condate Legacy Records. Music ▶ loeuvreaunoir1.bandcamp.com Label ▶ condatelegacy.bandcamp.com"
+      "notes": "CD Digipack limited to 50 copies, produced by Condate Legacy Records. Music ▶ loeuvreaunoir1.bandcamp.com Label ▶ condatelegacy.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-513434612",
@@ -6288,7 +6726,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD Digipack, self-produced by Drusuna. Music ▶youtu.be/ccByyd5vXqw"
+      "notes": "CD Digipack, self-produced by Drusuna. Music ▶youtu.be/ccByyd5vXqw",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1729558178",
@@ -6316,7 +6756,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Embroidered patches of Secret Stairways, from Cold Dungeon Offerings made by the Grey Sister, archivist and family member. 🥀 Label ▶ colddungeonofferings.bandcamp.com Music ▶ secretstairways.bandcamp.com"
+      "notes": "Embroidered patches of Secret Stairways, from Cold Dungeon Offerings made by the Grey Sister, archivist and family member. 🥀 Label ▶ colddungeonofferings.bandcamp.com Music ▶ secretstairways.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2223627300",
@@ -6344,7 +6786,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Interviews with Weress, Hoarfrost, Noirsuaire, Potions of Eleanor, Sonaura, Squire, Lord Bakartia, The Blood Mountain Black Metal Choir. A5 stapled brochure printed, 48 pages Volume Made in April 2025 Label ▶ nocturnalcurserecords.bandcamp.com"
+      "notes": "Interviews with Weress, Hoarfrost, Noirsuaire, Potions of Eleanor, Sonaura, Squire, Lord Bakartia, The Blood Mountain Black Metal Choir. A5 stapled brochure printed, 48 pages Volume Made in April 2025 Label ▶ nocturnalcurserecords.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-677663508",
@@ -6372,7 +6816,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Interviews with Cave Spellcaster and Mushroom Keep Records, Corpse Gnomes, Duskgreeter, Fimnur, Radagast, Skhemty and Ancient King Records, Unreal Estate Records. A5 stapled brochure printed, 68 pages Volume Made in April 2025"
+      "notes": "Interviews with Cave Spellcaster and Mushroom Keep Records, Corpse Gnomes, Duskgreeter, Fimnur, Radagast, Skhemty and Ancient King Records, Unreal Estate Records. A5 stapled brochure printed, 68 pages Volume Made in April 2025",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3272660185",
@@ -6400,7 +6846,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Can be signed on request, please notify in your order. Photography by Faallaway faallaway.com"
+      "notes": "Can be signed on request, please notify in your order. Photography by Faallaway faallaway.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3965401394",
@@ -6428,7 +6876,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Can be signed on request, please notify in your order. Photography by Faallaway faallaway.com"
+      "notes": "Can be signed on request, please notify in your order. Photography by Faallaway faallaway.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3428733392",
@@ -6456,7 +6906,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Can be signed on request, please notify in your order. Logo by Wappenschmied wappenschmied.com Photography by Faallaway faallaway.com"
+      "notes": "Can be signed on request, please notify in your order. Logo by Wappenschmied wappenschmied.com Photography by Faallaway faallaway.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-926457826",
@@ -6484,7 +6936,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Black magic mug of Weress \"Dungeon on the Moon\" and logo, vibrant and permanent sublimation printing with white color on glossy ceramic, limited to 30. With your mug, we offered you our Black & Strong coffee Dark Dungeon Coffee and round brushed mirror effect sticker. ☕"
+      "notes": "Black magic mug of Weress \"Dungeon on the Moon\" and logo, vibrant and permanent sublimation printing with white color on glossy ceramic, limited to 30. With your mug, we offered you our Black & Strong coffee Dark Dungeon Coffee and round brushed mirror effect sticker. ☕",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-75874690",
@@ -6512,7 +6966,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Black magic mug of Weress shield of the moon and logo, vibrant and permanent sublimation printing with white color on glossy ceramic, limited to 30. With your mug, we offered you our Black & Strong coffee Dark Dungeon Coffee and round brushed mirror effect sticker. ☕"
+      "notes": "Black magic mug of Weress shield of the moon and logo, vibrant and permanent sublimation printing with white color on glossy ceramic, limited to 30. With your mug, we offered you our Black & Strong coffee Dark Dungeon Coffee and round brushed mirror effect sticker. ☕",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3616485098",
@@ -6544,7 +7000,35 @@
       "tracks": [],
       "options": [],
       "optionName": "Colors",
-      "notes": "Ancient King Records label logo embroidered on a double layer knit hat for winter. Handcrafted embroidery by Envie de Broderie enviedebroderie.fr Machine washable, 100% soft touch acrylic. ~ Black hat, white embroidery. ~ Beige hat, light brown embroidery. ~ Green bottle hat, pale yellow embroidery. ~ Chocolate hat, pale yellow embroidery. ~ Orange hat, black embroidery."
+      "notes": "Ancient King Records label logo embroidered on a double layer knit hat for winter. Handcrafted embroidery by Envie de Broderie enviedebroderie.fr Machine washable, 100% soft touch acrylic. ~ Black hat, white embroidery. ~ Beige hat, light brown embroidery. ~ Green bottle hat, pale yellow embroidery. ~ Chocolate hat, pale yellow embroidery. ~ Orange hat, black embroidery.",
+      "stock": 0,
+      "variants": [
+        {
+          "id": 175698948,
+          "name": "BLACK (Black hat, white embroidery)",
+          "stock": 0
+        },
+        {
+          "id": 3846893277,
+          "name": "BEIGE (Beige hat, light brown embroidery)",
+          "stock": 0
+        },
+        {
+          "id": 2975373894,
+          "name": "GREEN (Green hat, pale yellow embroidery)",
+          "stock": 0
+        },
+        {
+          "id": 3069807137,
+          "name": "CHOCOLATE (Chocolate hat, pale yellow embroidery)",
+          "stock": 0
+        },
+        {
+          "id": 2394506777,
+          "name": "ORANGE (Orange hat, black embroidery)",
+          "stock": 0
+        }
+      ]
     },
     {
       "slug": "bandcamp-item-1488302597",
@@ -6573,7 +7057,35 @@
       "tracks": [],
       "options": [],
       "optionName": "Size",
-      "notes": "✦ THIS PRODUCT IS A PRE-ORDER ✦ Printed in white on black t-shirt 100% bio cotton textile. Design by Shaggy Dark instagram.com/shaggydark666 Pre-sales will be enabled starting TODAY to March 6th. The limitation will be determined based on the number of pieces placed on them. It's estimated that we will begin shipping all orders by the end of March."
+      "notes": "✦ THIS PRODUCT IS A PRE-ORDER ✦ Printed in white on black t-shirt 100% bio cotton textile. Design by Shaggy Dark instagram.com/shaggydark666 Pre-sales will be enabled starting TODAY to March 6th. The limitation will be determined based on the number of pieces placed on them. It's estimated that we will begin shipping all orders by the end of March.",
+      "stock": 0,
+      "variants": [
+        {
+          "id": 4200296025,
+          "name": "S",
+          "stock": 0
+        },
+        {
+          "id": 3262329969,
+          "name": "M",
+          "stock": 0
+        },
+        {
+          "id": 4014069473,
+          "name": "L",
+          "stock": 0
+        },
+        {
+          "id": 2885419365,
+          "name": "XL",
+          "stock": 0
+        },
+        {
+          "id": 2315445335,
+          "name": "XXL",
+          "stock": 0
+        }
+      ]
     },
     {
       "slug": "bandcamp-item-2998927565",
@@ -6602,7 +7114,35 @@
       "tracks": [],
       "options": [],
       "optionName": "Size",
-      "notes": "Printed beige t-shirt 100% cotton textile. Design by Edjovni instagram.com/edjovni_art"
+      "notes": "Printed beige t-shirt 100% cotton textile. Design by Edjovni instagram.com/edjovni_art",
+      "stock": 0,
+      "variants": [
+        {
+          "id": 213411029,
+          "name": "S",
+          "stock": 0
+        },
+        {
+          "id": 3778656118,
+          "name": "M",
+          "stock": 0
+        },
+        {
+          "id": 3127596239,
+          "name": "L",
+          "stock": 0
+        },
+        {
+          "id": 2303770690,
+          "name": "XL",
+          "stock": 0
+        },
+        {
+          "id": 483857903,
+          "name": "XXL",
+          "stock": 0
+        }
+      ]
     },
     {
       "slug": "bandcamp-item-1587556200",
@@ -6633,7 +7173,45 @@
       "tracks": [],
       "options": [],
       "optionName": "Size",
-      "notes": "Printed in white on black t-shirt 100% bio cotton textile. Design by Noirs Dessins instagram.com/noirs.dessins"
+      "notes": "Printed in white on black t-shirt 100% bio cotton textile. Design by Noirs Dessins instagram.com/noirs.dessins",
+      "stock": 0,
+      "variants": [
+        {
+          "id": 1015088031,
+          "name": "XS",
+          "stock": 0
+        },
+        {
+          "id": 1939195797,
+          "name": "S",
+          "stock": 0
+        },
+        {
+          "id": 1955035426,
+          "name": "M",
+          "stock": 0
+        },
+        {
+          "id": 2726745461,
+          "name": "L",
+          "stock": 0
+        },
+        {
+          "id": 1763124445,
+          "name": "XL",
+          "stock": 0
+        },
+        {
+          "id": 2073655727,
+          "name": "XXL",
+          "stock": 0
+        },
+        {
+          "id": 3166902508,
+          "name": "XXXL",
+          "stock": 0
+        }
+      ]
     },
     {
       "slug": "bandcamp-item-1652991108",
@@ -6663,7 +7241,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Black mug of Ancient King Records \"It's time to relax and listen to Dungeon Synth\" and label emblem, screen-printed with white color, limited to 30. With your mug, we offered you our Black and Strong coffee Dark Dungeon Coffee and round brushed mirror effect sticker. ☕"
+      "notes": "Black mug of Ancient King Records \"It's time to relax and listen to Dungeon Synth\" and label emblem, screen-printed with white color, limited to 30. With your mug, we offered you our Black and Strong coffee Dark Dungeon Coffee and round brushed mirror effect sticker. ☕",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2882822032",
@@ -6693,7 +7273,40 @@
       "tracks": [],
       "options": [],
       "optionName": "Sizes",
-      "notes": "Screen-printed in France, white t-shirt 100% cotton textile. Printed by XL Impression xlimpression.com Design by Carlos Castilho instagram.com/crawlstilho"
+      "notes": "Screen-printed in France, white t-shirt 100% cotton textile. Printed by XL Impression xlimpression.com Design by Carlos Castilho instagram.com/crawlstilho",
+      "stock": 0,
+      "variants": [
+        {
+          "id": 611341488,
+          "name": "S",
+          "stock": 0
+        },
+        {
+          "id": 2740456685,
+          "name": "M",
+          "stock": 0
+        },
+        {
+          "id": 1315368539,
+          "name": "L",
+          "stock": 0
+        },
+        {
+          "id": 1658911173,
+          "name": "XL",
+          "stock": 0
+        },
+        {
+          "id": 1840761931,
+          "name": "XXL",
+          "stock": 0
+        },
+        {
+          "id": 4181461158,
+          "name": "XXXL",
+          "stock": 0
+        }
+      ]
     },
     {
       "slug": "bandcamp-item-580401878",
@@ -6723,7 +7336,35 @@
       "tracks": [],
       "options": [],
       "optionName": "Size",
-      "notes": "Screen-printed in France, black t-shirt 100% cotton textile. Printed by Useless Pride Merch uselesspride.com Design by John Lordswood https://linktr.ee/johnlordswood"
+      "notes": "Screen-printed in France, black t-shirt 100% cotton textile. Printed by Useless Pride Merch uselesspride.com Design by John Lordswood https://linktr.ee/johnlordswood",
+      "stock": 0,
+      "variants": [
+        {
+          "id": 502155651,
+          "name": "S",
+          "stock": 0
+        },
+        {
+          "id": 206254897,
+          "name": "M",
+          "stock": 0
+        },
+        {
+          "id": 891706907,
+          "name": "L",
+          "stock": 0
+        },
+        {
+          "id": 4011391790,
+          "name": "XL",
+          "stock": 0
+        },
+        {
+          "id": 3740759561,
+          "name": "XXL",
+          "stock": 0
+        }
+      ]
     },
     {
       "slug": "bandcamp-item-1165589646",
@@ -6755,7 +7396,35 @@
       "tracks": [],
       "options": [],
       "optionName": "Size",
-      "notes": "Screen-printed in France, black t-shirt 100% cotton textile. Printed by Useless Pride Merch uselesspride.com Design by Joan Llopis Doménech instagram.com/joan_llopis_illustrations Music → erang.bandcamp.com"
+      "notes": "Screen-printed in France, black t-shirt 100% cotton textile. Printed by Useless Pride Merch uselesspride.com Design by Joan Llopis Doménech instagram.com/joan_llopis_illustrations Music → erang.bandcamp.com",
+      "stock": 0,
+      "variants": [
+        {
+          "id": 3523889223,
+          "name": "S",
+          "stock": 0
+        },
+        {
+          "id": 3820359830,
+          "name": "M",
+          "stock": 0
+        },
+        {
+          "id": 2547764140,
+          "name": "L",
+          "stock": 0
+        },
+        {
+          "id": 99825319,
+          "name": "XL",
+          "stock": 0
+        },
+        {
+          "id": 4183656969,
+          "name": "XXL",
+          "stock": 0
+        }
+      ]
     },
     {
       "slug": "bandcamp-item-4127359627",
@@ -6784,7 +7453,35 @@
       "tracks": [],
       "options": [],
       "optionName": "Size",
-      "notes": "White logo of Ancient King Records. Screen-printed in France, black hoodie 100% cotton textile. Printed by Useless Pride Merch uselesspride.com Design by Wappenschmied wappenschmied.com"
+      "notes": "White logo of Ancient King Records. Screen-printed in France, black hoodie 100% cotton textile. Printed by Useless Pride Merch uselesspride.com Design by Wappenschmied wappenschmied.com",
+      "stock": 0,
+      "variants": [
+        {
+          "id": 3119931168,
+          "name": "S",
+          "stock": 0
+        },
+        {
+          "id": 3898983676,
+          "name": "M",
+          "stock": 0
+        },
+        {
+          "id": 1659022462,
+          "name": "L",
+          "stock": 0
+        },
+        {
+          "id": 2836521523,
+          "name": "XL",
+          "stock": 0
+        },
+        {
+          "id": 461067281,
+          "name": "XXL",
+          "stock": 0
+        }
+      ]
     },
     {
       "slug": "bandcamp-item-2474123569",
@@ -6814,7 +7511,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD digipack, limited to 200 copies, self-produced by the artist. DISTRO"
+      "notes": "CD digipack, limited to 200 copies, self-produced by the artist. DISTRO",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-538538146",
@@ -6847,7 +7546,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette \"Spooky Edition\" limited to 50 copies, includes: • Organza bag with printed spider webs • Jack-o'-lantern pumpkin on the bag • Orange cassette • Sticker • Badge 🍁 Bonus tracks \"Nocturnis\" and \"Orange Leaf Dust\" included."
+      "notes": "Cassette \"Spooky Edition\" limited to 50 copies, includes: • Organza bag with printed spider webs • Jack-o'-lantern pumpkin on the bag • Orange cassette • Sticker • Badge 🍁 Bonus tracks \"Nocturnis\" and \"Orange Leaf Dust\" included.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1526552547",
@@ -6876,7 +7577,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Handmade CD full silver, limited to 20 numbered copies."
+      "notes": "Handmade CD full silver, limited to 20 numbered copies.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-376980170",
@@ -6906,7 +7609,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Stellar grey cassette, limited to 50 copies."
+      "notes": "Stellar grey cassette, limited to 50 copies.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2322542993",
@@ -6936,7 +7641,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Black cassette, limited to 50 copies. In collaboration with Realm and Ritual (US store): ▶ realmandritual.bandcamp.com"
+      "notes": "Black cassette, limited to 50 copies. In collaboration with Realm and Ritual (US store): ▶ realmandritual.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2975329140",
@@ -6966,7 +7673,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Clear blue cassette, limited to 50 copies."
+      "notes": "Clear blue cassette, limited to 50 copies.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3066531193",
@@ -6996,7 +7705,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Silver cassette, limited to 100 copies."
+      "notes": "Silver cassette, limited to 100 copies.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2205520196",
@@ -7025,7 +7736,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Ice white cassette, limited to 50 copies."
+      "notes": "Ice white cassette, limited to 50 copies.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-978822569",
@@ -7054,7 +7767,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Black cassette, limited to 50 copies."
+      "notes": "Black cassette, limited to 50 copies.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2520474570",
@@ -7084,7 +7799,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Green cassette, limited to 50 copies. In collaboration with Dale Of Shadows (Greece store): ▶ daleofshadows.bandcamp.com Bonus track included."
+      "notes": "Green cassette, limited to 50 copies. In collaboration with Dale Of Shadows (Greece store): ▶ daleofshadows.bandcamp.com Bonus track included.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1657750224",
@@ -7117,7 +7834,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette \"Old Moss Edition\" limited to 15 copies, includes: • VHS case with moss inside • Green cassette • Woven logo patch • Cards with dried flowers • Little mushrooms • Sticker Bonus track included."
+      "notes": "Cassette \"Old Moss Edition\" limited to 15 copies, includes: • VHS case with moss inside • Green cassette • Woven logo patch • Cards with dried flowers • Little mushrooms • Sticker Bonus track included.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3180546023",
@@ -7147,7 +7866,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Handmade mini CDr, limited to 30 copies."
+      "notes": "Handmade mini CDr, limited to 30 copies.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2021595698",
@@ -7178,7 +7899,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Stellar silver cassette, limited to 50 copies."
+      "notes": "Stellar silver cassette, limited to 50 copies.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1293207821",
@@ -7207,7 +7930,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD digipack, limited to 100 copies, self-produced by the artist. DISTRO"
+      "notes": "CD digipack, limited to 100 copies, self-produced by the artist. DISTRO",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-528979800",
@@ -7235,7 +7960,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "High quality woven patch, made by Temporal Dimensions Patches."
+      "notes": "High quality woven patch, made by Temporal Dimensions Patches.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3356622138",
@@ -7263,7 +7990,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "High quality woven patch, made by Temporal Dimensions Patches."
+      "notes": "High quality woven patch, made by Temporal Dimensions Patches.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-136066615",
@@ -7291,7 +8020,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "High quality woven patch, made by Temporal Dimensions Patches."
+      "notes": "High quality woven patch, made by Temporal Dimensions Patches.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2870454296",
@@ -7320,7 +8051,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Antique golden cassette, limited to 100 copies."
+      "notes": "Antique golden cassette, limited to 100 copies.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3496883922",
@@ -7350,7 +8083,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Clear green cassette, limited to 50 copies."
+      "notes": "Clear green cassette, limited to 50 copies.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3231711735",
@@ -7379,7 +8114,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Red cassette, limited to 50 copies."
+      "notes": "Red cassette, limited to 50 copies.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2110379837",
@@ -7408,7 +8145,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "White cassette limited to 100 copies, with badge."
+      "notes": "White cassette limited to 100 copies, with badge.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-454675949",
@@ -7442,7 +8181,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "White cassette \"Bright Edition\" limited to 50 copies, includes: • Burlap bag with the hand-printed logo • Gold-colored embroidered patch • Badge of the Metal Heart • Two printed photos of Matthew Davis • Golden crown • White feather"
+      "notes": "White cassette \"Bright Edition\" limited to 50 copies, includes: • Burlap bag with the hand-printed logo • Gold-colored embroidered patch • Badge of the Metal Heart • Two printed photos of Matthew Davis • Golden crown • White feather",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2691171833",
@@ -7470,7 +8211,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Metal pins of the Weress shield."
+      "notes": "Metal pins of the Weress shield.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3796350179",
@@ -7498,7 +8241,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "High quality woven patch."
+      "notes": "High quality woven patch.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2889910826",
@@ -7529,7 +8274,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Handmade CD, limited to 20 numbered copies."
+      "notes": "Handmade CD, limited to 20 numbered copies.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3227194831",
@@ -7562,7 +8309,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "The First Years \"Cardboard Boxset Edition\", limited to 10 copies, contains: • Cardboard box with artwork printed • 10 CDr / More than13 hours of space music • Handmade booklet • Logo patch"
+      "notes": "The First Years \"Cardboard Boxset Edition\", limited to 10 copies, contains: • Cardboard box with artwork printed • 10 CDr / More than13 hours of space music • Handmade booklet • Logo patch",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1457174233",
@@ -7593,7 +8342,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD digipack, limited to 200 copies."
+      "notes": "CD digipack, limited to 200 copies.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1852050336",
@@ -7622,7 +8373,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Black marble cassette, limited to 100 copies."
+      "notes": "Black marble cassette, limited to 100 copies.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1007692952",
@@ -7653,7 +8406,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Edition by Ancient King Records, cassette \"Dreamer Edition\" limited to 25 copies, contains: • Organza bag with golden stars • Black marble cassette • Woven logo patch • Vial of stars • Metal pins of the shield • Sticker"
+      "notes": "Edition by Ancient King Records, cassette \"Dreamer Edition\" limited to 25 copies, contains: • Organza bag with golden stars • Black marble cassette • Woven logo patch • Vial of stars • Metal pins of the shield • Sticker",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-789789892",
@@ -7684,7 +8439,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Weress Rêvasseries Chevaleresques \"Wooden Boxset Edition\", limited to 10 copies, contains: • Wooden box with logo engraved and painted by hand • Organza bag with golden stars • Back marble cassette • Woven logo patch • Vial of stars • Metal pins of the shield • White Moonstone • Sticker"
+      "notes": "Weress Rêvasseries Chevaleresques \"Wooden Boxset Edition\", limited to 10 copies, contains: • Wooden box with logo engraved and painted by hand • Organza bag with golden stars • Back marble cassette • Woven logo patch • Vial of stars • Metal pins of the shield • White Moonstone • Sticker",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2121275389",
@@ -7715,7 +8472,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Handmade CD, limited to 30 numbered copies."
+      "notes": "Handmade CD, limited to 30 numbered copies.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-819279562",
@@ -7744,7 +8503,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Clear cassette, limited to 50 numbered copies."
+      "notes": "Clear cassette, limited to 50 numbered copies.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2005859216",
@@ -7774,7 +8535,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD digipack reissue 2024, limited to 50 numbered copies, contains booklet."
+      "notes": "CD digipack reissue 2024, limited to 50 numbered copies, contains booklet.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1754426130",
@@ -7802,7 +8565,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "High quality embroidered patch of Dreamy Knight."
+      "notes": "High quality embroidered patch of Dreamy Knight.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1658815575",
@@ -7831,7 +8596,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Black cassette with slipcase, standard edition limited to 50 numbered copies."
+      "notes": "Black cassette with slipcase, standard edition limited to 50 numbered copies.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2998374120",
@@ -7865,7 +8632,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette \"Enchanted Edition\" limited to 35 numbered copies, includes: • Dark red burlap bag with printed logo in black • Black cassette with slipcase • Embroidered logo patch • Sachet containing three natural incense cones • Glass bottle containing Majolan's ruins • Antique silver key to keep the secret • Antique gold keyring on the bag • Black feather • Photos"
+      "notes": "Cassette \"Enchanted Edition\" limited to 35 numbered copies, includes: • Dark red burlap bag with printed logo in black • Black cassette with slipcase • Embroidered logo patch • Sachet containing three natural incense cones • Glass bottle containing Majolan's ruins • Antique silver key to keep the secret • Antique gold keyring on the bag • Black feather • Photos",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1749410201",
@@ -7896,7 +8665,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "12\" vinyl test pressing, black vinyl wrapped in burlap sealed with wax, limited to 5 copies. Can be signed on request. Shipping tracked includes."
+      "notes": "12\" vinyl test pressing, black vinyl wrapped in burlap sealed with wax, limited to 5 copies. Can be signed on request. Shipping tracked includes.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-848912842",
@@ -7927,7 +8698,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD digipack, limited to 100 copies. In collaboration with Barrow Hoard Records (USA store): ▶ barrowhoardrecords.bandcamp.com"
+      "notes": "CD digipack, limited to 100 copies. In collaboration with Barrow Hoard Records (USA store): ▶ barrowhoardrecords.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1077085932",
@@ -7956,7 +8729,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Antique golden cassette, limited to 50 numbered copies, contains: • Handwritten calligraphy on parchment • Photo printed • Badge"
+      "notes": "Antique golden cassette, limited to 50 numbered copies, contains: • Handwritten calligraphy on parchment • Photo printed • Badge",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2129926747",
@@ -7986,7 +8761,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Antique golden cassette, limited to 24 numbered copies, includes: • Wrapped in fabric with screen-printed gold leaf • Handwritten calligraphy on parchment • Golden and white feathers • Photo printed • Badge"
+      "notes": "Antique golden cassette, limited to 24 numbered copies, includes: • Wrapped in fabric with screen-printed gold leaf • Handwritten calligraphy on parchment • Golden and white feathers • Photo printed • Badge",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-111592770",
@@ -8016,7 +8793,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD digipack, limited to 50 numbered copies, contains booklet. Re-print with no badge."
+      "notes": "CD digipack, limited to 50 numbered copies, contains booklet. Re-print with no badge.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-730055508",
@@ -8046,7 +8825,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Antique golden cassette, limited to 50 numbered copies. Re-print with no badge."
+      "notes": "Antique golden cassette, limited to 50 numbered copies. Re-print with no badge.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-197579283",
@@ -8078,7 +8859,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Descort Ysopet 2nd \"Medieval Wooden Boxset Edition\", limited to 15 numbered copies, contains: • A solid wooden box with engraved logo and instruments • CD digipack and cassette • 4 handwritten calligraphy on parchment • Linen pouch that contain 4 vials: - Vial for the fable of Rions: stones from the watchtower of Rions - Vial for the fable of the Nyonsais: lavender from the fields of Nyons - Vial for Mornas and the Dragon-Guardian: dragon ashes - Vial for the fable of the toad: containing extracts of toad • Sachet of lavender tea from the fields of Nyons • 2 incense sticks • Badges in a paper box • Hand-calligraphed personal thanks letter from Descort"
+      "notes": "Descort Ysopet 2nd \"Medieval Wooden Boxset Edition\", limited to 15 numbered copies, contains: • A solid wooden box with engraved logo and instruments • CD digipack and cassette • 4 handwritten calligraphy on parchment • Linen pouch that contain 4 vials: - Vial for the fable of Rions: stones from the watchtower of Rions - Vial for the fable of the Nyonsais: lavender from the fields of Nyons - Vial for Mornas and the Dragon-Guardian: dragon ashes - Vial for the fable of the toad: containing extracts of toad • Sachet of lavender tea from the fields of Nyons • 2 incense sticks • Badges in a paper box • Hand-calligraphed personal thanks letter from Descort",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1124672006",
@@ -8107,7 +8890,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "White cassette, limited to 10 numbered copies."
+      "notes": "White cassette, limited to 10 numbered copies.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-966795956",
@@ -8138,7 +8923,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "White cassette, limited to 40 numbered copies, includes: • Tape wrapped and held with blue wax • Quartz stone chips in a glass vial"
+      "notes": "White cassette, limited to 40 numbered copies, includes: • Tape wrapped and held with blue wax • Quartz stone chips in a glass vial",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3113407575",
@@ -8167,7 +8954,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette limited to 50 numbered copies, includes: • Black audio tape • Secret card • Badge"
+      "notes": "Cassette limited to 50 numbered copies, includes: • Black audio tape • Secret card • Badge",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-983154045",
@@ -8197,7 +8986,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette \"Edition of the Wanderer\" limited to 20 numbered copies, includes: • Black audio tape in a black velvet bag • Old black parchment • Secret card • Badge"
+      "notes": "Cassette \"Edition of the Wanderer\" limited to 20 numbered copies, includes: • Black audio tape in a black velvet bag • Old black parchment • Secret card • Badge",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-883321991",
@@ -8227,7 +9018,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette \"Edition of the Knight\" limited to 5 numbered copies, includes: • Black audio tape, wrapped in chainmail • Old black parchment • Secret card • Badge"
+      "notes": "Cassette \"Edition of the Knight\" limited to 5 numbered copies, includes: • Black audio tape, wrapped in chainmail • Old black parchment • Secret card • Badge",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-358623591",
@@ -8257,7 +9050,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "\"Wooden Box of the King\", limited to 5 numbered copies, includes: • Handmade wooden box, engraved logo • Black audio tape, presented on a green moss • Black obsidian stone speckled with snow white • Glass vial contening ashes of dragon • Embroidered logo patch • Old black parchment • Secret card • Badge"
+      "notes": "\"Wooden Box of the King\", limited to 5 numbered copies, includes: • Handmade wooden box, engraved logo • Black audio tape, presented on a green moss • Black obsidian stone speckled with snow white • Glass vial contening ashes of dragon • Embroidered logo patch • Old black parchment • Secret card • Badge",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3223911208",
@@ -8288,7 +9083,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette \"Black Knighthood Edition\" limited to 50 numbered copies, includes: • Brown burlap bag • Silver cassette • Old sword on the bag • Old parchment held with a snake ring"
+      "notes": "Cassette \"Black Knighthood Edition\" limited to 50 numbered copies, includes: • Brown burlap bag • Silver cassette • Old sword on the bag • Old parchment held with a snake ring",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2977538219",
@@ -8316,7 +9113,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "3 high quality round PVC stickers of Erang. Music → https://erang.bandcamp.com"
+      "notes": "3 high quality round PVC stickers of Erang. Music → https://erang.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2441840998",
@@ -8344,7 +9143,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "High quality embroidered patch of Erang. Music ▶ https://erang.bandcamp.com"
+      "notes": "High quality embroidered patch of Erang. Music ▶ https://erang.bandcamp.com",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1560230998",
@@ -8372,7 +9173,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "High quality woven patch of Skhemty."
+      "notes": "High quality woven patch of Skhemty.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-833367451",
@@ -8403,7 +9206,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD digipack wrapped in burlap with wax, limited to 50 numbered copies. Bonus track included."
+      "notes": "CD digipack wrapped in burlap with wax, limited to 50 numbered copies. Bonus track included.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3712928787",
@@ -8434,7 +9239,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Cassette \"Pharaoh Edition\" limited to 50 numbered copies, includes: • Beige burlap bag with printed logo in black • Antique golden cassette • Woven logo patch • Sachet sealed with wax containing three natural incense cones • Pharaoh jewel on the bag • Antique gold eye of Ra necklace Bonus track included."
+      "notes": "Cassette \"Pharaoh Edition\" limited to 50 numbered copies, includes: • Beige burlap bag with printed logo in black • Antique golden cassette • Woven logo patch • Sachet sealed with wax containing three natural incense cones • Pharaoh jewel on the bag • Antique gold eye of Ra necklace Bonus track included.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1815560551",
@@ -8462,7 +9269,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "High quality woven patch of Weress."
+      "notes": "High quality woven patch of Weress.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-3518461099",
@@ -8493,7 +9302,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD digipack with booklet, maps of the univers and the badge, limited to 50 numbered copies. Bonus tracks included."
+      "notes": "CD digipack with booklet, maps of the univers and the badge, limited to 50 numbered copies. Bonus tracks included.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2051452540",
@@ -8523,7 +9334,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Black cassette with handmade booklet, maps of the univers and the badge, limited to 50 numbered copies. Bonus tracks included."
+      "notes": "Black cassette with handmade booklet, maps of the univers and the badge, limited to 50 numbered copies. Bonus tracks included.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2223576390",
@@ -8555,7 +9368,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Edition by Ancient King Records, cassette \"Traveler Edition\" limited to 30 numbered copies, contains: • Black velvet bag with printed logo in white • Black cassette • Woven artwork patch • Maps of the universe • Dragon jewel on the bag • Black stone on the bag • Handmade booklet • Badge Bonus track included."
+      "notes": "Edition by Ancient King Records, cassette \"Traveler Edition\" limited to 30 numbered copies, contains: • Black velvet bag with printed logo in white • Black cassette • Woven artwork patch • Maps of the universe • Dragon jewel on the bag • Black stone on the bag • Handmade booklet • Badge Bonus track included.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1196153420",
@@ -8583,7 +9398,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Metal pins of the dungeon on the moon."
+      "notes": "Metal pins of the dungeon on the moon.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2880218611",
@@ -8611,7 +9428,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "High quality woven patch of Weress."
+      "notes": "High quality woven patch of Weress.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-409452394",
@@ -8640,7 +9459,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Black cassette limited to 50 numbered copies."
+      "notes": "Black cassette limited to 50 numbered copies.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2992070423",
@@ -8671,7 +9492,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Edition by Ancient King Records, cassette \"Traveler Edition\" limited to 30 numbered copies, contains: • Black velvet bag with printed logo in white • Black cassette • Woven artwork patch • Sword jewel on the bag • White stone on the bag • Pins of the dungeon on the moon"
+      "notes": "Edition by Ancient King Records, cassette \"Traveler Edition\" limited to 30 numbered copies, contains: • Black velvet bag with printed logo in white • Black cassette • Woven artwork patch • Sword jewel on the bag • White stone on the bag • Pins of the dungeon on the moon",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1123550562",
@@ -8702,7 +9525,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD digipack, limited to 50 numbered copies, contains booklet and badge."
+      "notes": "CD digipack, limited to 50 numbered copies, contains booklet and badge.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-493837429",
@@ -8731,7 +9556,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Antique golden cassette, limited to 50 numbered copies, contains badge."
+      "notes": "Antique golden cassette, limited to 50 numbered copies, contains badge.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-169914681",
@@ -8764,7 +9591,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Feudum Unspoken Arcane Mysteries \"Medieval Wooden Boxset Edition\", limited to 10 numbered copies, contains: • Wooden box with logo engraved, tapestry inside and metal elements • CD digipack 'Unspoken Arcane Mysteries' with booklet • Cassette 'Unspoken Arcane Mysteries' • Embroidered logo patch • Parchment sheets with handmade calligraphy • Black candle • Badge"
+      "notes": "Feudum Unspoken Arcane Mysteries \"Medieval Wooden Boxset Edition\", limited to 10 numbered copies, contains: • Wooden box with logo engraved, tapestry inside and metal elements • CD digipack 'Unspoken Arcane Mysteries' with booklet • Cassette 'Unspoken Arcane Mysteries' • Embroidered logo patch • Parchment sheets with handmade calligraphy • Black candle • Badge",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1135601478",
@@ -8793,7 +9622,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "CD digipack, limited to 50 numbered copies, contains booklet."
+      "notes": "CD digipack, limited to 50 numbered copies, contains booklet.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-1541517899",
@@ -8822,7 +9653,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Antique golden cassette, limited to 50 numbered copies."
+      "notes": "Antique golden cassette, limited to 50 numbered copies.",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-2046876772",
@@ -8855,7 +9688,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Descort Ysopet 1er \"Medieval Wooden Boxset Edition\", limited to 10 numbered copies, contains: • Wooden box with the artist's logo pyro-engraved by hand with the 4 medieval instruments • CD digipack Ysopet 1er • Cassette Ysopet 1er • 8 parchment sheets (4 calligraphies of the fables, 4 drawings representing the fables) • Glass vials including artifacts from ruins of various French castles • A black envelope containing a personal note from the composer"
+      "notes": "Descort Ysopet 1er \"Medieval Wooden Boxset Edition\", limited to 10 numbered copies, contains: • Wooden box with the artist's logo pyro-engraved by hand with the 4 medieval instruments • CD digipack Ysopet 1er • Cassette Ysopet 1er • 8 parchment sheets (4 calligraphies of the fables, 4 drawings representing the fables) • Glass vials including artifacts from ruins of various French castles • A black envelope containing a personal note from the composer",
+      "stock": 0,
+      "variants": []
     },
     {
       "slug": "bandcamp-item-4154415204",
@@ -8883,7 +9718,9 @@
       "tracks": [],
       "options": [],
       "optionName": "",
-      "notes": "Dungeon Synth, AKR round badges 25mm, limited to 1000."
+      "notes": "Dungeon Synth, AKR round badges 25mm, limited to 1000.",
+      "stock": 0,
+      "variants": []
     }
   ]
 }

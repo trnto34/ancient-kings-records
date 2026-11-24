@@ -3,7 +3,6 @@ import { BRAND } from './config.mjs';
 import { samples, statement } from './data.mjs';
 
 const snapshot = JSON.parse(readFileSync(new URL('../db/bandcamp.json', import.meta.url), 'utf8'));
-export const bandcampSnapshotDate = snapshot.captured;
 export function bandcampFormatArt(group) {
   return snapshot.items.find(item => item.groups.includes(group) && item.state === 'available')?.thumbnail
     ?? snapshot.items.find(item => item.groups.includes(group))?.thumbnail;
@@ -50,6 +49,28 @@ export async function seedBandcamp(db) {
         INSERT OR IGNORE INTO product_categories (product_id, category_slug)
         SELECT id, ? FROM products WHERE slug = ?`, [group, item.slug])),
     );
+
+    if (item.kind === 'physical') {
+      const variants = item.variants ?? [];
+      commands.push(
+        ...variants.map(variant => statement(db, `
+          INSERT OR IGNORE INTO products (slug, title, artist_id, format, genre, price_cents, list_cents,
+            stock, active, sample, parent_id, variant_label)
+          SELECT ?, p.title, p.artist_id, p.format, p.genre, p.price_cents, p.list_cents,
+            ?, 1, p.sample, p.id, ?
+          FROM products p JOIN bandcamp_items b ON b.product_id = p.id
+          WHERE p.slug = ? AND b.stock_imported = 0`,
+        [`${item.slug}-option-${variant.id}`, variant.stock, variant.name, item.slug])),
+        statement(db, `
+          UPDATE products SET stock = ?, revision = revision + 1
+          WHERE slug = ? AND EXISTS (
+            SELECT 1 FROM bandcamp_items WHERE product_id = products.id AND stock_imported = 0
+          )`, [variants.length ? 0 : item.stock, item.slug]),
+        statement(db, `
+          UPDATE bandcamp_items SET stock_imported = 1
+          WHERE stock_imported = 0 AND product_id = (SELECT id FROM products WHERE slug = ?)`, [item.slug]),
+      );
+    }
   }
   await db.batch(commands);
 }

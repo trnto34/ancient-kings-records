@@ -1,5 +1,4 @@
 export const BRAND = 'Ancient King Records';
-export const BANDCAMP = 'https://ancientkingrec.bandcamp.com';
 export const DESCRIPTION = 'Independent record label and underground distro for dungeon synth, black metal and dark ambient.';
 export const GENRES = ['Dungeon synth', 'Black metal', 'Dark ambient', 'Medieval folk', 'Other'];
 export const CATEGORIES = [
@@ -16,7 +15,7 @@ export const CATEGORIES = [
   ['new-arrivals', 'New arrivals', 'Releases added in the last 90 days.', 'recent'],
   ['digital-releases', 'Digital releases', 'Albums and listening previews from the label’s Bandcamp catalogue.', 'manual'],
   ['distribution', 'Distribution', 'Editions listed in the Bandcamp distro.', 'manual'],
-  ['shipping-add-ons', 'Shipping add-ons', 'Optional Bandcamp shipping services.', 'manual'],
+  ['shipping-add-ons', 'Shipping add-ons', 'Shipping information for orders.', 'manual'],
   ['sale', 'Sale', 'Currently discounted catalogue titles.', 'sale'],
 ];
 

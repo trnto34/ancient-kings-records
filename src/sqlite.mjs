@@ -6,7 +6,18 @@ export function openDatabase(file) {
   if (file !== ':memory:') mkdirSync(dirname(file), { recursive: true });
   const sqlite = new DatabaseSync(file);
   sqlite.exec('PRAGMA journal_mode = WAL; PRAGMA foreign_keys = ON; PRAGMA busy_timeout = 5000;');
-  sqlite.exec(readFileSync(new URL('../db/001-schema.sql', import.meta.url), 'utf8'));
+  sqlite.exec('BEGIN IMMEDIATE');
+  try {
+    sqlite.exec(readFileSync(new URL('../db/001-schema.sql', import.meta.url), 'utf8'));
+    if (sqlite.prepare('PRAGMA user_version').get().user_version < 2) {
+      sqlite.exec(readFileSync(new URL('../db/002-native-sales.sql', import.meta.url), 'utf8'));
+    }
+    sqlite.exec('COMMIT');
+  } catch (error) {
+    sqlite.exec('ROLLBACK');
+    sqlite.close();
+    throw error;
+  }
 
   return {
     prepare(query) {

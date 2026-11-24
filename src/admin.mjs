@@ -3,7 +3,7 @@ import { html } from 'hono/html';
 import { BRAND, GENRES, cleanUrl, dateLabel, money } from './config.mjs';
 import { all, first, run, statement } from './data.mjs';
 import { adminKeyMatches, clearSession, rateAllowed, session, setSession } from './security.mjs';
-import { categories } from './shop.mjs';
+import { availableStock, canPurchase, categories, productVariants } from './shop.mjs';
 import { breadcrumbs, layout, message } from './views.mjs';
 import { orderItems } from './checkout.mjs';
 
@@ -52,9 +52,10 @@ admin.post('/logout', async c => {
 
 admin.get('/', async c => {
   const counts = await first(c.env.DB, `SELECT
-    (SELECT count(*) FROM products) AS products,
+    (SELECT count(*) FROM products WHERE parent_id IS NULL) AS products,
     (SELECT count(*) FROM products p LEFT JOIN bandcamp_items b ON b.product_id = p.id
-      WHERE p.active = 1 AND ((b.product_id IS NULL AND p.stock = 0) OR b.state = 'sold-out')) AS sold_out,
+      WHERE p.active = 1 AND p.parent_id IS NULL AND b.kind IS NOT 'digital'
+        AND p.format <> 'Shipping add-on' AND ${availableStock} = 0) AS sold_out,
     (SELECT count(*) FROM orders WHERE status = 'paid') AS unshipped,
     (SELECT count(*) FROM subscribers) AS subscribers`);
   return adminPage(c, 'Store administration', html`<dl class="admin-stats">
@@ -67,13 +68,14 @@ const table = (headers, rows) => html`<div class="table-wrap"><table><thead><tr>
   <tbody>${rows.map(row => html`<tr>${row.map(cell => html`<td>${cell}</td>`)}</tr>`)}</tbody></table></div>`;
 
 admin.get('/products', async c => {
-  const products = await all(c.env.DB, `SELECT p.*, b.url AS bandcamp_url, b.state AS bandcamp_state, b.price_mode AS bandcamp_price_mode
-    FROM products p LEFT JOIN bandcamp_items b ON b.product_id = p.id ORDER BY p.created_at DESC, p.id DESC`);
+  const products = await all(c.env.DB, `SELECT p.*, b.kind AS bandcamp_kind, ${availableStock} AS available_stock
+    FROM products p LEFT JOIN bandcamp_items b ON b.product_id = p.id
+    WHERE p.parent_id IS NULL ORDER BY p.created_at DESC, p.id DESC`);
   return adminPage(c, 'Products & inventory', html`<p><a class="button button-primary" href="/admin/products/new">Add a product</a></p>
     ${table(['Product', 'Format', 'Price', 'Available stock', 'Listing'], products.map(item => [
-      html`<a href="/admin/products/${item.id}">${item.title}</a>`, item.format, item.bandcamp_price_mode === 'source' ? 'Bandcamp' : money(item.price_cents, item.bandcamp_url ? 'EUR' : c.get('shop').currency),
-      item.bandcamp_url ? 'Managed on Bandcamp' : item.stock,
-      `${item.active ? 'Published' : 'Draft'}${item.bandcamp_url ? ' · Bandcamp' : item.sample ? ' · Sample' : ''}`,
+      html`<a href="/admin/products/${item.id}">${item.title}</a>`, item.format, canPurchase(item) ? money(item.price_cents, c.get('shop').currency) : '—',
+      canPurchase(item) ? item.available_stock : '—',
+      `${item.active ? 'Published' : 'Draft'}${item.sample ? ' · Sample' : ''}`,
     ]))}`);
 });
 
@@ -92,10 +94,12 @@ async function productForm(c, id, item, chosen, error = '') {
   const title = id === 'new' ? 'Add a product' : 'Edit product';
   return adminPage(c, title, html`${errorBanner(error)}
     <form method="post" action="/admin/products/${id}" class="stacked-form admin-form">
+      ${!canPurchase(item) ? html`<p>${item.bandcamp_kind === 'digital' ? 'Listening preview' : 'Shipping information'}</p>` : ''}
       ${id === 'new' ? '' : html`<input type="hidden" name="revision" value="${item.revision}">`}
       <div class="field-grid">
         ${field('Title', 'title', item.title, { required: true })}
-        ${field('URL slug', 'slug', item.slug, { required: true })}
+        ${item.bandcamp_kind ? html`<label>URL slug<input name="slug" value="${item.slug}" readonly></label>`
+          : field('URL slug', 'slug', item.slug, { required: true })}
         <label>Artist<select name="artist_id"><option value="">No associated artist</option>${artists.map(artist =>
           html`<option value="${artist.id}" ${Number(item.artist_id) === artist.id ? 'selected' : ''}>${artist.name}</option>`)}</select></label>
         ${field('Format', 'format', item.format, { required: true, max: 60 })}
@@ -104,11 +108,20 @@ async function productForm(c, id, item, chosen, error = '') {
         ${field('Label', 'label', item.label ?? BRAND)}
         ${field('Release date', 'release_date', item.release_date, { type: 'date' })}
         ${field('Catalogue number', 'catalogue_number', item.catalogue_number)}
-        ${field(`Price (${c.get('shop').currency})`, 'price', item.price, { type: 'number', required: true, min: 0, step: '0.01' })}
-        ${field('Original price (optional)', 'list_price', item.list_price, { type: 'number', min: 0, step: '0.01' })}
-        ${field('Available stock', 'stock', item.stock ?? 0, { type: 'number', required: true, min: 0 })}
+        ${canPurchase(item) ? html`
+          ${field(`Price (${c.get('shop').currency})`, 'price', item.price, { type: 'number', required: true, min: 0, step: '0.01' })}
+          ${field('Original price (optional)', 'list_price', item.list_price, { type: 'number', min: 0, step: '0.01' })}
+        ` : html`<input type="hidden" name="price" value="${item.price}"><input type="hidden" name="list_price" value="${item.list_price}">`}
+        ${!canPurchase(item) || item.variants?.length ? html`<input type="hidden" name="stock" value="0">`
+          : field('Available stock', 'stock', item.stock ?? 0, { type: 'number', required: true, min: 0 })}
         ${field('Bandcamp album ID (optional)', 'bandcamp_album', item.bandcamp_album, { max: 16 })}
       </div>
+      ${item.variants?.length ? html`<fieldset><legend>Available stock by ${(item.bandcamp_option_name || 'option').toLowerCase()}</legend>
+        <div class="field-grid">${item.variants.map(variant => html`
+          <div><input type="hidden" name="variant_revision_${variant.id}" value="${variant.revision}">
+            ${field(variant.variant_label, `variant_stock_${variant.id}`, variant.stock, { type: 'number', min: 0, required: true })}
+          </div>`)}</div>
+      </fieldset>` : ''}
       ${area('Artwork URLs (one per line)', 'artwork', item.artwork, 3, 4000)}
       ${area('Description', 'description', item.description, 5, 5000)}
       ${area('Tracklist (one track per line)', 'tracklist', item.tracklist, 5, 4000)}
@@ -123,14 +136,14 @@ async function productForm(c, id, item, chosen, error = '') {
 admin.get('/products/:id', async c => {
   const id = c.req.param('id');
   if (id === 'new') return productForm(c, id, {}, []);
-  const item = idPattern.test(id) && await first(c.env.DB, 'SELECT * FROM products WHERE id = ?', [Number(id)]);
+  const item = idPattern.test(id) && await first(c.env.DB, `
+    SELECT p.*, b.kind AS bandcamp_kind, b.option_name AS bandcamp_option_name
+    FROM products p LEFT JOIN bandcamp_items b ON b.product_id = p.id
+    WHERE p.id = ? AND p.parent_id IS NULL`, [Number(id)]);
   if (!item) return message(c, 'Product unavailable', 'This catalogue entry could not be found.', 404, '/admin/products', 'Products');
-  const source = await first(c.env.DB, 'SELECT url FROM bandcamp_items WHERE product_id = ?', [item.id]);
-  if (source) return adminPage(c, item.title, html`<p>This listing is imported from the Bandcamp catalogue.</p>
-    <a class="button button-outline" href="${source.url}">Open Bandcamp listing</a>`);
   const groups = await all(c.env.DB, 'SELECT category_slug FROM product_categories WHERE product_id = ?', [item.id]);
   return productForm(c, id, {
-    ...item, price: (item.price_cents / 100).toFixed(2),
+    ...item, variants: await productVariants(c.env.DB, item.id), price: (item.price_cents / 100).toFixed(2),
     list_price: item.list_cents === null ? '' : (item.list_cents / 100).toFixed(2), artwork: JSON.parse(item.images).join('\n'),
   }, groups.map(group => group.category_slug));
 });
@@ -138,28 +151,34 @@ admin.get('/products/:id', async c => {
 admin.post('/products/:id', async c => {
   const db = c.env.DB;
   const id = c.req.param('id');
-  const existing = id !== 'new' && idPattern.test(id) && await first(db, 'SELECT * FROM products WHERE id = ?', [Number(id)]);
+  const existing = id !== 'new' && idPattern.test(id) && await first(db, `
+    SELECT p.*, b.kind AS bandcamp_kind, b.option_name AS bandcamp_option_name
+    FROM products p LEFT JOIN bandcamp_items b ON b.product_id = p.id
+    WHERE p.id = ? AND p.parent_id IS NULL`, [Number(id)]);
   if (id !== 'new' && !existing) return c.redirect('/admin/products', 303);
-  if (existing && await first(db, 'SELECT product_id FROM bandcamp_items WHERE product_id = ?', [existing.id])) {
-    return c.redirect(`/admin/products/${existing.id}`, 303);
-  }
+  const variants = existing ? await productVariants(db, existing.id) : [];
   const form = await c.req.parseBody({ all: true });
   const selected = [form.categories ?? []].flat();
   const item = {
-    slug: text(form.slug, 100), title: text(form.title, 180), artist_id: text(form.artist_id, 14),
+    slug: existing?.bandcamp_kind ? existing.slug : text(form.slug, 100), title: text(form.title, 180), artist_id: text(form.artist_id, 14),
     format: text(form.format, 60), genre: text(form.genre, 60), label: text(form.label, 180),
     price: text(form.price, 10), list_price: text(form.list_price, 10), stock: text(form.stock, 8),
     release_date: text(form.release_date, 10), catalogue_number: text(form.catalogue_number, 180),
     description: text(form.description, 5000), tracklist: text(form.tracklist, 4000),
-    revision: text(form.revision, 12),
+    revision: text(form.revision, 12), variants,
+    bandcamp_kind: existing?.bandcamp_kind, bandcamp_option_name: existing?.bandcamp_option_name,
     artwork: text(form.artwork, 4000), bandcamp_album: text(form.bandcamp_album, 16),
     active: Number(form.active === '1'), sample: Number(form.sample === '1'), featured: Number(form.featured === '1'),
   };
+  if (variants.length || !canPurchase(item)) item.stock = '0';
   const error = reason => productForm(c, id, item, selected, reason);
   const price = /^\d{1,6}(?:\.\d{1,2})?$/;
   if (!slugPattern.test(item.slug) || !item.title || !item.format) return error('Enter a title, format and a lowercase slug with hyphens.');
   if (!price.test(item.price) || item.list_price && (!price.test(item.list_price) || Number(item.list_price) <= Number(item.price))) return error('Enter valid prices. The original price must be higher than the sale price.');
   if (!/^\d{1,7}$/.test(item.stock)) return error('Enter an available stock quantity of zero or more.');
+  if (variants.some(variant => !/^\d{1,7}$/.test(text(form[`variant_stock_${variant.id}`], 8)))) {
+    return error('Enter a stock quantity of zero or more for each option.');
+  }
   const date = new Date(`${item.release_date}T00:00:00Z`);
   if (item.release_date && (!Number.isFinite(date.getTime()) || date.toISOString().slice(0, 10) !== item.release_date)) return error('Enter a valid release date.');
   if (item.bandcamp_album && !/^\d{1,16}$/.test(item.bandcamp_album)) return error('Enter a numeric Bandcamp album ID.');
@@ -169,9 +188,12 @@ admin.post('/products/:id', async c => {
   const artistId = item.artist_id ? Number(item.artist_id) : null;
   if (artistId !== null && (!idPattern.test(item.artist_id) || !await first(db, 'SELECT id FROM artists WHERE id = ?', [artistId]))) return error('Choose an existing artist.');
   const groups = (await categories(db)).filter(group => group.rule === 'manual' && selected.includes(group.slug));
+  const genre = GENRES.includes(item.genre) ? item.genre : '';
+  const priceCents = Math.round(Number(item.price) * 100);
+  const listCents = item.list_price ? Math.round(Number(item.list_price) * 100) : null;
   const values = [
-    item.slug, item.title, artistId, item.format, GENRES.includes(item.genre) ? item.genre : '',
-    Math.round(Number(item.price) * 100), item.list_price ? Math.round(Number(item.list_price) * 100) : null, Number(item.stock),
+    item.slug, item.title, artistId, item.format, genre,
+    priceCents, listCents, Number(item.stock),
     item.active, item.sample, item.featured, item.label, item.catalogue_number, item.release_date, item.description, item.tracklist,
     JSON.stringify(images), item.bandcamp_album,
   ];
@@ -179,6 +201,7 @@ admin.post('/products/:id', async c => {
     'label', 'catalogue_number', 'release_date', 'description', 'tracklist', 'images', 'bandcamp_album'];
   const stale = () => message(c, 'Product changed', 'Reload the product and review the current inventory before saving.', 409, `/admin/products/${id}`, 'Reload product');
   if (existing && (!/^\d+$/.test(item.revision) || Number(item.revision) !== existing.revision)) return stale();
+  if (variants.some(variant => text(form[`variant_revision_${variant.id}`], 12) !== String(variant.revision))) return stale();
   const save = existing ? statement(db, `UPDATE products SET ${columns.map(column => `${column} = ?`).join(', ')},
     revision = CASE WHEN revision = ? THEN revision + 1 ELSE -1 END WHERE id = ?`,
   [...values, existing.revision, existing.id]) :
@@ -187,6 +210,11 @@ admin.post('/products/:id', async c => {
   try {
     const operations = [
       save,
+      ...variants.map(variant => statement(db, `UPDATE products SET title = ?, artist_id = ?, format = ?, genre = ?,
+        price_cents = ?, list_cents = ?, stock = ?, sample = ?,
+        revision = CASE WHEN revision = ? THEN revision + 1 ELSE -1 END WHERE id = ?`,
+      [item.title, artistId, item.format, genre, priceCents, listCents,
+        Number(form[`variant_stock_${variant.id}`]), item.sample, variant.revision, variant.id])),
       statement(db, 'DELETE FROM product_categories WHERE product_id = (SELECT id FROM products WHERE slug = ?)', [item.slug]),
       ...groups.map(group => statement(db, 'INSERT INTO product_categories SELECT id, ? FROM products WHERE slug = ?', [group.slug, item.slug])),
     ];

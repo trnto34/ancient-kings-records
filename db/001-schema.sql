@@ -147,10 +147,3 @@ BEGIN
       revision = revision + 1
   WHERE id IN (SELECT product_id FROM order_items WHERE order_id = OLD.id);
 END;
-
-CREATE TRIGGER IF NOT EXISTS reject_bandcamp_order_item
-BEFORE INSERT ON order_items
-WHEN EXISTS (SELECT 1 FROM bandcamp_items WHERE product_id = NEW.product_id)
-BEGIN
-  SELECT RAISE(ABORT, 'bandcamp_checkout_required');
-END;
