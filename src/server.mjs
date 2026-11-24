@@ -7,10 +7,13 @@ import { parseArgs } from 'node:util';
 import app from './app.mjs';
 import { openDatabase } from './sqlite.mjs';
 import { seedCatalogue } from './data.mjs';
+import { seedBandcamp } from './bandcamp.mjs';
 
 const project = fileURLToPath(new URL('..', import.meta.url));
 const database = openDatabase(process.env.DATABASE_PATH === ':memory:' ? ':memory:' : resolve(project, process.env.DATABASE_PATH ?? 'data/store.sqlite'));
-await seedCatalogue(database, process.env.SEED_DEMO !== 'false');
+const demo = process.env.SEED_DEMO;
+await seedCatalogue(database, demo === 'samples');
+if (demo !== 'false' && demo !== 'samples') await seedBandcamp(database);
 
 const server = new Hono();
 server.use('/assets/*', serveStatic({

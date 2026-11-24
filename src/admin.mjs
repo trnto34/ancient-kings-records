@@ -53,7 +53,8 @@ admin.post('/logout', async c => {
 admin.get('/', async c => {
   const counts = await first(c.env.DB, `SELECT
     (SELECT count(*) FROM products) AS products,
-    (SELECT count(*) FROM products WHERE active = 1 AND stock = 0) AS sold_out,
+    (SELECT count(*) FROM products p LEFT JOIN bandcamp_items b ON b.product_id = p.id
+      WHERE p.active = 1 AND ((b.product_id IS NULL AND p.stock = 0) OR b.state = 'sold-out')) AS sold_out,
     (SELECT count(*) FROM orders WHERE status = 'paid') AS unshipped,
     (SELECT count(*) FROM subscribers) AS subscribers`);
   return adminPage(c, 'Store administration', html`<dl class="admin-stats">
@@ -66,11 +67,13 @@ const table = (headers, rows) => html`<div class="table-wrap"><table><thead><tr>
   <tbody>${rows.map(row => html`<tr>${row.map(cell => html`<td>${cell}</td>`)}</tr>`)}</tbody></table></div>`;
 
 admin.get('/products', async c => {
-  const products = await all(c.env.DB, 'SELECT * FROM products ORDER BY created_at DESC, id DESC');
+  const products = await all(c.env.DB, `SELECT p.*, b.url AS bandcamp_url, b.state AS bandcamp_state, b.price_mode AS bandcamp_price_mode
+    FROM products p LEFT JOIN bandcamp_items b ON b.product_id = p.id ORDER BY p.created_at DESC, p.id DESC`);
   return adminPage(c, 'Products & inventory', html`<p><a class="button button-primary" href="/admin/products/new">Add a product</a></p>
     ${table(['Product', 'Format', 'Price', 'Available stock', 'Listing'], products.map(item => [
-      html`<a href="/admin/products/${item.id}">${item.title}</a>`, item.format, money(item.price_cents, c.get('shop').currency),
-      item.stock, `${item.active ? 'Published' : 'Draft'}${item.sample ? ' · Sample' : ''}`,
+      html`<a href="/admin/products/${item.id}">${item.title}</a>`, item.format, item.bandcamp_price_mode === 'source' ? 'Bandcamp' : money(item.price_cents, item.bandcamp_url ? 'EUR' : c.get('shop').currency),
+      item.bandcamp_url ? 'Managed on Bandcamp' : item.stock,
+      `${item.active ? 'Published' : 'Draft'}${item.bandcamp_url ? ' · Bandcamp' : item.sample ? ' · Sample' : ''}`,
     ]))}`);
 });
 
@@ -122,6 +125,9 @@ admin.get('/products/:id', async c => {
   if (id === 'new') return productForm(c, id, {}, []);
   const item = idPattern.test(id) && await first(c.env.DB, 'SELECT * FROM products WHERE id = ?', [Number(id)]);
   if (!item) return message(c, 'Product unavailable', 'This catalogue entry could not be found.', 404, '/admin/products', 'Products');
+  const source = await first(c.env.DB, 'SELECT url FROM bandcamp_items WHERE product_id = ?', [item.id]);
+  if (source) return adminPage(c, item.title, html`<p>This listing is imported from the Bandcamp catalogue.</p>
+    <a class="button button-outline" href="${source.url}">Open Bandcamp listing</a>`);
   const groups = await all(c.env.DB, 'SELECT category_slug FROM product_categories WHERE product_id = ?', [item.id]);
   return productForm(c, id, {
     ...item, price: (item.price_cents / 100).toFixed(2),
@@ -134,6 +140,9 @@ admin.post('/products/:id', async c => {
   const id = c.req.param('id');
   const existing = id !== 'new' && idPattern.test(id) && await first(db, 'SELECT * FROM products WHERE id = ?', [Number(id)]);
   if (id !== 'new' && !existing) return c.redirect('/admin/products', 303);
+  if (existing && await first(db, 'SELECT product_id FROM bandcamp_items WHERE product_id = ?', [existing.id])) {
+    return c.redirect(`/admin/products/${existing.id}`, 303);
+  }
   const form = await c.req.parseBody({ all: true });
   const selected = [form.categories ?? []].flat();
   const item = {

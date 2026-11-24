@@ -14,7 +14,7 @@ export function stripeClient(env) {
 }
 
 async function reserveOrder(db, id, accountId, items, country, settings) {
-  if (!items.length || items.some(item => item.missing || item.sample || item.quantity > item.stock)) {
+  if (!items.length || items.some(item => item.missing || item.sample || item.bandcamp_url || item.quantity > item.stock)) {
     throw new CheckoutError('Review the availability of the items in your cart.');
   }
 

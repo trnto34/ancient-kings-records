@@ -1,7 +1,7 @@
 import { BRAND, CATEGORIES } from './config.mjs';
 
 const placeholderDescription = 'A sample listing for the storefront preview. Artwork, price and stock illustrate the catalogue layout.';
-const samples = [
+export const samples = [
   ['the-silent-keep', 'The Silent Keep', 'cassette', 'Dungeon synth', 1200, 12, 0, 'cassettes', 1],
   ['under-the-iron-gate', 'Under the Iron Gate', '12″ LP', 'Black metal', 2400, 8, 1, 'vinyl-lps,special-editions', 0],
   ['the-stone-circle', 'The Stone Circle', 'digipak CD', 'Dark ambient', 1450, 9, 2, 'cds', 0],

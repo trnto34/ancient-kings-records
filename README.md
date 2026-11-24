@@ -1,6 +1,6 @@
 # Ancient King Records
 
-An independent underground label website and record store for dungeon synth, black metal, dark ambient and medieval-inspired music. The storefront uses original artwork and a clearly marked sample catalogue.
+An independent label website and record store for dungeon synth, medieval and fantasy music. The demo uses the label’s branding and public Bandcamp catalogue.
 
 The app renders pages on the server using Node.js and Hono. SQLite stores catalogue entries, stock, orders, accounts, contact messages and newsletter signups. The app serves static CSS, JavaScript, fonts and compressed artwork. There is no frontend build step.
 
@@ -21,7 +21,12 @@ Copy `.env.example` to `.env` to configure the app. Set `DATABASE_PATH` to a fil
 
 Set a random `ADMIN_ACCESS_KEY` of at least 24 characters and visit `/admin`. Use the admin to edit catalogue entries, artwork links, stock, release dates, featured items, artists and categories. It also lists orders, contact messages and release notice subscribers.
 
-A fresh database created with `SEED_DEMO=false` includes the standard categories and an empty catalogue. Sample items can be added to the cart for preview. They cannot enter Stripe checkout. Add real listings and remove or unpublish any sample listings before taking orders.
+### Bandcamp demo catalogue
+
+The demo loads `db/bandcamp.json`, a snapshot of the label’s [Bandcamp shop](https://ancientkingrec.bandcamp.com/merch) and [music catalogue](https://ancientkingrec.bandcamp.com/music) captured on 24 November 2026. It contains 232 shop listings including variants, sold-out editions and the tracked-shipping add-on, plus 61 playable music releases. The distribution index is represented by its own category.
+
+Imported prices and availability are snapshots. Product and purchase links lead to the original Bandcamp listings. Album audio streams through the Bandcamp player, and artwork loads from Bandcamp’s image CDN. The demo leaves Bandcamp listings out of local payment and inventory. A fresh database created with `SEED_DEMO=false` starts with the standard categories and an empty catalogue for locally managed products. Use `SEED_DEMO=samples` for the original fictional catalogue fixtures.
+
 
 ## Stripe Checkout
 

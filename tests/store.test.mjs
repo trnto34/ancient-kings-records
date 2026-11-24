@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import Stripe from 'stripe';
 import app from '../src/app.mjs';
+import { seedBandcamp } from '../src/bandcamp.mjs';
 import { first, run, seedCatalogue, statement } from '../src/data.mjs';
 import { openDatabase } from '../src/sqlite.mjs';
 
@@ -145,4 +146,31 @@ test('only verified Stripe events confirm orders or release reserved stock once'
   assert.equal((await send(expired, 'checkout.session.expired', expiration)).status, 200);
   assert.equal((await send(expired, 'checkout.session.expired', expiration)).status, 200);
   assert.equal((await first(DB, 'SELECT stock FROM products WHERE id = ?', [product.id])).stock, 2);
+});
+
+test('Bandcamp demo imports listings and editions without taking local payments', async t => {
+  const { DB, request, post } = await setup(t);
+  await seedBandcamp(DB);
+  await seedBandcamp(DB);
+  const counts = await first(DB, `SELECT
+    (SELECT count(*) FROM bandcamp_items) AS imported,
+    (SELECT count(*) FROM products WHERE active = 1 AND sample = 1) AS old_samples`);
+  assert.deepEqual({ ...counts }, { imported: 293, old_samples: 0 });
+
+  const listing = await (await request('/products/bandcamp-item-2573136917')).text();
+  assert.match(listing, /Om Selvadeg/);
+  assert.match(listing, /Buy on Bandcamp/);
+  assert.match(listing, /\/album\/om-selvadeg#package-title-2573136917/);
+  assert.doesNotMatch(listing, /action="\/cart\/add"/);
+
+  const digital = await (await request('/products/bandcamp-album-3825435833')).text();
+  assert.match(digital, /The Dwarven Cave/);
+  assert.match(digital, /album=3825435833/);
+  assert.match(digital, /Support the artist directly/);
+  assert.doesNotMatch(digital, /€999/);
+  assert.equal((await request('/artists/sample-artist-a')).status, 404);
+
+  const directAdd = await post('/cart/add', { slug: 'bandcamp-item-2573136917', quantity: 1 }, null, { accept: 'application/json' });
+  assert.equal(directAdd.status, 409);
+  assert.match((await directAdd.json()).error, /ordered through Bandcamp/);
 });

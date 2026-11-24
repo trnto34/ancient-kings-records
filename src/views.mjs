@@ -1,5 +1,6 @@
+import { bandcampFormatArt, bandcampSnapshotDate } from './bandcamp.mjs';
 import { html } from 'hono/html';
-import { BRAND, DESCRIPTION, CATEGORIES, FORMATS, GENRES, SAMPLE_ART, countryLabel, dateLabel, money } from './config.mjs';
+import { BRAND, BANDCAMP, DESCRIPTION, CATEGORIES, FORMATS, GENRES, SAMPLE_ART, countryLabel, dateLabel, money } from './config.mjs';
 import { cartTotal, maxQuantity, productImages } from './shop.mjs';
 
 const headerLinks = [['/store', 'Store'], ['/discography', 'Discography'], ['/artists', 'Artists'], ['/news', 'News'], ['/about', 'About']];
@@ -10,7 +11,7 @@ const bagIcon = html`<svg width="19" height="19" viewBox="0 0 24 24" fill="none"
 
 export function brand() {
   return html`<a class="brand" href="/" aria-label="${BRAND} home">
-    <span class="brand-mark" aria-hidden="true"><span></span></span>
+    <img class="label-crest" src="/assets/bandcamp-crest.webp" alt="" width="42" height="42">
     <span class="brand-name">Ancient King <span>Records</span></span>
   </a>`;
 }
@@ -36,7 +37,7 @@ function footer(c) {
     </section>
     <div class="shell footer-grid">
       <div>${brand()}<p>Independent record label and underground distribution.</p></div>
-      <nav aria-label="Explore"><h2>Explore</h2>${[['/store', 'Store'], ['/discography', 'Discography'], ['/artists', 'Artists'], ['/about', 'About the label']].map(([href, text]) => html`<a href="${href}">${text}</a>`)}</nav>
+      <nav aria-label="Explore"><h2>Explore</h2>${[['/store', 'Store'], ['/discography', 'Discography'], ['/artists', 'Artists'], ['/about', 'About the label'], [BANDCAMP, 'Bandcamp']].map(([href, text]) => html`<a href="${href}">${text}</a>`)}</nav>
       <nav aria-label="Help"><h2>Help</h2>${footerLinks.map(([href, text]) => html`<a href="${href}">${text}</a>`)}</nav>
     </div>
     <div class="shell footer-bottom"><small>© ${new Date().getFullYear()} ${BRAND}</small></div>
@@ -64,9 +65,9 @@ export function layout(c, options, content) {
   <meta property="og:description" content="${description}">
   <meta property="og:image" content="${socialImage}">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/assets/mark.webp" type="image/webp">
+  <link rel="icon" href="/assets/bandcamp-crest.webp" type="image/webp">
   <link rel="preload" href="/assets/barlow-condensed-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/site.css?v=3">
+  <link rel="stylesheet" href="/assets/site.css?v=4">
   <script src="/assets/site.js" defer></script>
 </head>
 <body>
@@ -104,14 +105,29 @@ export function message(c, title, text, status = 400, href = '/store', link = 'B
 }
 
 export function stockLabel(item) {
-  return html`<span class="stock ${item.stock ? 'in-stock' : 'out-stock'}">${item.stock ? 'In stock' : 'Sold out'}</span>`;
+  const label = item.bandcamp_url ? {
+    available: 'Listed in stock', 'sold-out': 'Sold out', preorder: 'Pre-order', listen: 'Stream / download',
+  }[item.bandcamp_state] : (item.stock ? 'In stock' : 'Sold out');
+  const soldOut = item.bandcamp_url ? item.bandcamp_state === 'sold-out' : !item.stock;
+  return html`<span class="stock ${soldOut ? 'out-stock' : 'in-stock'}">${label}</span>`;
 }
 
 function price(item, currency) {
+  if (item.bandcamp_url) {
+    const label = item.bandcamp_price_mode === 'source' ? 'See Bandcamp'
+      : item.bandcamp_price_mode === 'minimum' && !item.price_cents ? 'Name your price'
+      : `${item.bandcamp_price_mode === 'minimum' ? 'From ' : ''}${money(item.price_cents, 'EUR')}`;
+    return html`<span class="price">${label}</span>`;
+  }
   return html`<span class="price">${item.list_cents ? html`<s>${money(item.list_cents, currency)}</s>` : ''}${money(item.price_cents, currency)}</span>`;
 }
 
 function addForm(item, next, quantity = false) {
+  if (item.bandcamp_url) {
+    const label = item.bandcamp_kind === 'digital' && item.bandcamp_price_mode === 'source' ? 'Listen on Bandcamp'
+      : item.bandcamp_state === 'sold-out' ? 'View on Bandcamp' : quantity ? 'Buy on Bandcamp' : 'Bandcamp';
+    return html`<a class="button ${quantity ? 'button-primary' : 'button-card'}" href="${item.bandcamp_url}">${label}</a>`;
+  }
   return html`<form method="post" action="/cart/add" class="add-form" data-add-form>
     <input type="hidden" name="slug" value="${item.slug}">
     <input type="hidden" name="next" value="${next}">
@@ -123,8 +139,8 @@ function addForm(item, next, quantity = false) {
 export function productCard(item, currency, next) {
   const url = `/products/${item.slug}`;
   return html`<article class="product-card">
-    <a class="cover-link" href="${url}" aria-label="${item.title}">
-      <img src="${productImages(item)[0]}" alt="" loading="lazy" width="512" height="512">
+    <a class="cover-link${item.bandcamp_kind === 'physical' ? ' cover-link-edition' : ''}" href="${url}" aria-label="${item.title}">
+      <img src="${item.bandcamp_thumbnail || productImages(item)[0]}" alt="" loading="lazy" width="512" height="512">
       ${item.sample ? html`<span class="sample-tag">Sample</span>` : ''}
     </a>
     <div class="product-card-body">
@@ -143,26 +159,34 @@ export function productGrid(items, currency, next) {
 
 export function home(c, arrivals, featured) {
   const { currency } = c.get('shop');
+  const spotlight = featured.find(item => item.bandcamp_kind === 'physical');
   return layout(c, {}, html`
-    <section class="hero" aria-labelledby="hero-title">
-      <picture class="hero-image"><source media="(max-width: 680px)" srcset="/assets/ruins-mobile.webp"><img src="/assets/ruins.webp" alt="" width="1680" height="560" fetchpriority="high"></picture>
-      <div class="shell hero-content"><span class="eyebrow">Independent record label & distro</span>
-        <h1 id="hero-title">Ancient King<br>Records</h1>
-        <p>Dungeon synth, black metal and dark ambient.<br class="desktop-only"> Physical releases from the underground.</p>
-        <div class="hero-actions"><a href="/store" class="button button-primary">Enter the store</a><a href="/discography" class="button button-outline">Explore releases</a></div>
+    <section class="hero catalogue-hero" aria-labelledby="hero-title">
+      <picture class="hero-image"><source media="(max-width: 680px)" srcset="/assets/ruins-mobile.webp"><img src="/assets/ruins.webp" alt="" width="1680" height="560"></picture>
+      <div class="shell hero-layout">
+        <div class="hero-content"><p class="eyebrow">Independent label · France</p>
+          <h1 id="hero-title" class="visually-hidden">Ancient King Records</h1>
+          <img class="label-wordmark" src="/assets/bandcamp-wordmark.webp" alt="" width="410" height="180" fetchpriority="high">
+          <p>Dungeon synth, medieval and fantasy music on tape, CD and vinyl.</p>
+          <div class="hero-actions"><a href="/store" class="button button-primary">Browse the armory</a><a href="${BANDCAMP}/music" class="button button-outline">Listen on Bandcamp</a></div>
+        </div>
+        ${spotlight ? html`<a class="hero-record" href="/products/${spotlight.slug}">
+          <img src="${productImages(spotlight)[0]}" alt="" width="512" height="512" fetchpriority="high">
+          <span class="hero-record-caption"><span><small>${spotlight.artist || BRAND}</small><strong>${spotlight.title}</strong></span><span>${spotlight.format}</span></span>
+        </a>` : ''}
       </div>
     </section>
     <nav class="format-nav" aria-label="Shop by format"><div class="shell format-nav-inner">
-      ${CATEGORIES.filter(([slug]) => ['all-releases', 'vinyl-lps', 'cds', 'cassettes', 'merchandise', 'zines-and-publications', 'sale'].includes(slug)).map(([slug, name]) =>
+      ${CATEGORIES.filter(([slug]) => ['all-releases', 'vinyl-lps', 'cds', 'cassettes', 'merchandise', 'zines-and-publications', 'digital-releases', 'distribution'].includes(slug)).map(([slug, name]) =>
         html`<a href="/store/${slug}">${name}</a>`)}
     </div></nav>
     <section class="shell section-space" aria-labelledby="arrivals-title">
-      <div class="section-head"><div><h2 id="arrivals-title">New Arrivals</h2>${arrivals.some(item => item.sample) ? html`<p>Sample listings for the catalogue preview.</p>` : ''}</div>
+      <div class="section-head"><div><h2 id="arrivals-title">New in the Armory</h2>${arrivals.some(item => item.sample) ? html`<p>Sample listings for the catalogue preview.</p>` : ''}</div>
         <a class="text-link" href="/store/new-arrivals">View all arrivals</a></div>
       ${arrivals.length ? productGrid(arrivals, currency, '/') : html`<p class="empty">New releases will appear here when they’re added.</p>`}
     </section>
     ${featured.length ? html`<section id="featured" class="featured" aria-labelledby="featured-title">
-      <div class="shell section-space"><div class="section-head"><h2 id="featured-title">Featured Releases</h2><a class="text-link" href="/discography">Label discography</a></div>
+      <div class="shell section-space"><div class="section-head"><h2 id="featured-title">Featured Editions</h2><a class="text-link" href="/discography">Label discography</a></div>
         <div class="featured-grid">${featured.map(item => html`<article class="featured-item">
           <a href="/products/${item.slug}" tabindex="-1"><img src="${productImages(item)[0]}" alt="" width="512" height="512" loading="lazy"></a>
           <div class="featured-copy"><p class="eyebrow">${item.sample ? 'Sample release' : item.format}</p><h3><a href="/products/${item.slug}">${item.title}</a></h3>
@@ -170,10 +194,10 @@ export function home(c, arrivals, featured) {
         </div>
       </div></section>` : ''}
     <section class="shell section-space" aria-labelledby="format-title"><div class="section-head"><h2 id="format-title">Browse by Format</h2></div>
-      <div class="format-grid">${FORMATS.map(([slug, name, art]) => html`<a class="format-tile" href="/store/${slug}"><img src="/assets/${art}" alt="" width="512" height="512" loading="lazy"><span>${name}</span></a>`)}</div>
+      <div class="format-grid">${FORMATS.map(([slug, name, art]) => html`<a class="format-tile" href="/store/${slug}"><img src="${bandcampFormatArt(slug) ?? `/assets/${art}`}" alt="" width="512" height="512" loading="lazy"><span>${name}</span></a>`)}</div>
     </section>
     <section class="philosophy"><div class="shell philosophy-copy"><h2>About the Label</h2>
-      <p>Ancient King Records is an independent label and distro dedicated to underground music, independent artists and physical editions. The catalogue brings together music shaped by old places, dark atmospheres and imagined worlds.</p>
+      <p>Ancient King Records is an independent label and distro dedicated to underground music, independent artists and physical editions. Based in Nouvelle-Aquitaine, France, the label releases dungeon synth and music shaped by medieval and fantasy traditions.</p>
       <a class="text-link" href="/about">About the label</a>
     </div></section>`);
 }
@@ -212,7 +236,7 @@ export function store(c, category, allCategories, filters, results) {
           <label class="checkbox"><input type="checkbox" name="available" value="1" ${available ? 'checked' : ''}>In stock</label>
           <button class="button button-primary">Apply</button>
         </form>
-        <div class="results-meta"><p>${total} ${total === 1 ? 'item' : 'items'}${q ? html` matching <strong>“${q}”</strong>` : ''}${items.some(item => item.sample) ? ' · Sample listings included' : ''}</p>
+        <div class="results-meta"><p>${total} ${total === 1 ? 'item' : 'items'}${q ? html` matching <strong>“${q}”</strong>` : ''}${items.some(item => item.sample) ? ' · Sample listings included' : items.some(item => item.bandcamp_url) ? ' · Bandcamp catalogue' : ''}</p>
           ${q || genre || available || sort !== 'newest' ? html`<a href="${path}">Clear filters</a>` : ''}</div>
         ${items.length ? productGrid(items, currency, next) :
           html`<div class="empty"><h2>No matching items</h2><p>Try a different search or browse the full catalogue.</p><a class="text-link" href="/store">All releases</a></div>`}
@@ -234,6 +258,9 @@ function productSummary(c, item, expanded) {
     <p class="detail-format">${item.format}${item.genre ? ` · ${item.genre}` : ''}</p>
     <div class="detail-price">${price(item, currency)}${stockLabel(item)}</div>
     ${addForm(item, `/products/${item.slug}`, true)}
+    ${item.bandcamp_url ? html`<p class="muted bandcamp-note">Catalogue snapshot from <time datetime="${bandcampSnapshotDate}">${dateLabel(bandcampSnapshotDate)}</time>. Bandcamp shows current prices and availability.</p>` : ''}
+    ${item.bandcamp_kind === 'digital' && item.bandcamp_artist_url && item.bandcamp_artist_url !== item.bandcamp_url
+      ? html`<p><a class="text-link" href="${item.bandcamp_artist_url}">Support the artist directly</a></p>` : ''}
     ${item.sample ? html`<p class="muted">Sample artwork, price and stock. This listing is for browsing only.</p>` : ''}
   `;
 }
@@ -248,6 +275,7 @@ export function quickView(c, item) {
 export function productPage(c, item) {
   const images = productImages(item);
   const tracks = item.tracklist.split('\n').filter(Boolean);
+  const options = item.bandcamp_options ? JSON.parse(item.bandcamp_options) : [];
   return layout(c, { title: item.title, description: item.description.slice(0, 160) || undefined, artwork: images[0], noindex: Boolean(item.sample) }, html`
     <div class="shell page-spaced">
       ${breadcrumbs(['/store', 'Store'], [null, item.title])}
@@ -261,15 +289,16 @@ export function productPage(c, item) {
           ${productSummary(c, item, true)}
           <dl class="release-facts">
             <div><dt>Format</dt><dd>${item.format}</dd></div>
+            ${options.length ? html`<div><dt>${item.bandcamp_option_name || 'Options'}</dt><dd>${options.join(', ')}</dd></div>` : ''}
             ${item.label ? html`<div><dt>Label</dt><dd>${item.label}</dd></div>` : ''}
             ${item.release_date ? html`<div><dt>Release date</dt><dd><time datetime="${item.release_date}">${dateLabel(item.release_date)}</time></dd></div>` : ''}
             ${item.catalogue_number ? html`<div><dt>Catalogue number</dt><dd>${item.catalogue_number}</dd></div>` : ''}
           </dl>
-          <a class="text-link" href="/shipping">Shipping & returns</a>
+          <a class="text-link" href="${item.bandcamp_url || '/shipping'}">${item.bandcamp_url ? 'Listing details on Bandcamp' : 'Shipping & returns'}</a>
         </section>
       </div>
       <div class="release-notes">
-        <section><h2>About this release</h2><p class="preserve-lines">${item.description || 'Release notes will be added when available.'}</p>
+        <section><h2>${item.bandcamp_kind === 'physical' && !item.bandcamp_album ? 'About this item' : 'About this release'}</h2><p class="preserve-lines">${item.description || 'See the original Bandcamp listing for release notes and credits.'}</p>
           ${/^\d{1,16}$/.test(item.bandcamp_album) ? html`<iframe class="bandcamp" title="Listen to ${item.title} on Bandcamp" loading="lazy" src="https://bandcamp.com/EmbeddedPlayer/album=${item.bandcamp_album}/size=small/bgcol=333333/linkcol=e3bc85/transparent=true/"></iframe>` : ''}</section>
         ${tracks.length ? html`<section><h2>Tracklist</h2><ol class="tracklist">${tracks.map(track => html`<li>${track}</li>`)}</ol></section>` : ''}
       </div>
@@ -425,13 +454,14 @@ export function information(c, page) {
   const legalName = c.env.LEGAL_NAME;
   const legalAddress = c.env.LEGAL_ADDRESS;
   const about = html`<div class="prose"><h2>Underground music on physical formats</h2>
-    <p>Ancient King Records is an independent label and distro for dungeon synth, black metal, dark ambient and medieval-inspired music. The store brings together label releases and selections from the wider underground.</p>
+    <p>Ancient King Records is an independent label from Nouvelle-Aquitaine, France. It releases dungeon synth and music with medieval and fantasy influences. The distro carries work from other underground artists and labels.</p>
     <p>We focus on physical editions, from records and tapes to printed matter, and on the independent artists who make them.</p>
     <a class="button button-outline" href="/discography">Browse the discography</a></div>`;
-  const news = html`<div class="prose"><article><h2>The catalogue preview</h2><p>The storefront is open for preview with sample releases. Join the release notice list for future updates.</p><a class="text-link" href="#newsletter">Release notices</a></article></div>`;
+  const news = html`<div class="prose"><article><h2>The catalogue preview</h2><p>Browse the label’s Bandcamp catalogue here, including physical editions and digital releases.</p><a class="text-link" href="#newsletter">Release notices</a></article></div>`;
   const shipping = html`<div class="prose"><h2>Shipping</h2>
-    <p>Choose a destination in the cart to see the shipping cost before continuing to Stripe.</p>
+    <p>Bandcamp calculates shipping for listings in the label’s Bandcamp catalogue. For items ordered here, choose a destination in the cart to see the shipping cost.</p>
     ${Object.keys(rates).length ? html`<dl class="release-facts">${Object.entries(rates).map(([country, cents]) => html`<div><dt>${countryLabel(country)}</dt><dd>${money(cents, currency)}</dd></div>`)}</dl>` : html`<p>Shipping destinations and rates are being prepared.</p>`}
+    <p><a href="${BANDCAMP}/merch/tracked-shipping">Tracked shipping add-on on Bandcamp</a></p>
     <h2>Returns</h2><p>For order-specific queries or a return request, contact the label and include your order reference.</p>
     <a class="text-link" href="/contact">Contact the label</a></div>`;
   const privacy = html`<div class="prose"><h2>Information this store uses</h2><p>Cart and sign-in cookies keep your items and account session available in the browser. Account registration stores your email address and a password hash. Your email is saved when you subscribe to release notices.</p>
@@ -440,7 +470,7 @@ export function information(c, page) {
   const terms = html`<div class="prose">
     ${legalName && legalAddress ? html`<h2>Store operator</h2><p class="preserve-lines">${legalName}<br>${legalAddress}</p>` : html`<p>Merchant details and final store terms will be added before public sales.</p>`}
     <h2>Orders</h2><p>Checkout shows the order total and shipping charge before payment. A payment is confirmed after Stripe reports it as complete.</p>
-    <h2>Catalogue preview</h2><p>Sample listings illustrate the storefront. They are unavailable for purchase.</p><a class="text-link" href="/shipping">Shipping & returns</a></div>`;
+    <h2>Catalogue preview</h2><p>Bandcamp listings open the original shop for current availability, shipping, and payment.</p><a class="text-link" href="/shipping">Shipping & returns</a></div>`;
   const pages = {
     about: ['About the Label', '', about],
     news: ['News & Announcements', 'Updates from the label and store.', news],

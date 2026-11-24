@@ -43,6 +43,19 @@ CREATE TABLE IF NOT EXISTS products (
 CREATE INDEX IF NOT EXISTS products_catalogue ON products(active, created_at DESC, id DESC);
 CREATE INDEX IF NOT EXISTS products_artist ON products(artist_id, active);
 
+CREATE TABLE IF NOT EXISTS bandcamp_items (
+  product_id INTEGER PRIMARY KEY REFERENCES products(id) ON DELETE CASCADE,
+  url TEXT NOT NULL,
+  kind TEXT NOT NULL CHECK (kind IN ('physical', 'digital')),
+  state TEXT NOT NULL CHECK (state IN ('available', 'sold-out', 'preorder', 'listen')),
+  price_mode TEXT NOT NULL CHECK (price_mode IN ('fixed', 'minimum', 'source')),
+  thumbnail TEXT NOT NULL,
+  release_id TEXT NOT NULL DEFAULT '',
+  artist_url TEXT NOT NULL DEFAULT '',
+  option_name TEXT NOT NULL DEFAULT '',
+  options TEXT NOT NULL DEFAULT '[]'
+);
+
 CREATE TABLE IF NOT EXISTS product_categories (
   product_id INTEGER NOT NULL REFERENCES products(id) ON DELETE CASCADE,
   category_slug TEXT NOT NULL REFERENCES categories(slug) ON DELETE CASCADE,
@@ -133,4 +146,11 @@ BEGIN
   SET stock = stock + (SELECT quantity FROM order_items WHERE order_id = OLD.id AND product_id = products.id),
       revision = revision + 1
   WHERE id IN (SELECT product_id FROM order_items WHERE order_id = OLD.id);
+END;
+
+CREATE TRIGGER IF NOT EXISTS reject_bandcamp_order_item
+BEFORE INSERT ON order_items
+WHEN EXISTS (SELECT 1 FROM bandcamp_items WHERE product_id = NEW.product_id)
+BEGIN
+  SELECT RAISE(ABORT, 'bandcamp_checkout_required');
 END;
